@@ -1,0 +1,73 @@
+@page "/Settings/App"
+
+@attribute [Authorize(Roles = "Admin")]
+
+@using GameServer.Client.Services.Contracts
+@using GameServer.SharedKernel.ApiModels
+@using GameServer.Client.Helpers
+@inject IDialogService DialogService
+@inject IAppSettingsService AppSettingsService
+
+<MudDataGrid ColumnResizeMode="ResizeMode.Container" @ref="DataGrid" T="AppSettingsDTO" Items="@AppSettingsList" ReadOnly="false"
+             EditMode="DataGridEditMode.Form" MultiSelection="true" CommittedItemChanges="@CommittedItemChanges"
+             Bordered="true" Dense="true" EditTrigger="DataGridEditTrigger.Manual">
+    <Columns>
+        <PropertyColumn Property="x => x!.Id" IsEditable="false"/>
+        <PropertyColumn Property="x => x!.PlayerActivationDays" Resizable="true"/>
+        <PropertyColumn Property="x => x!.PlayerActivationPrice" Resizable="true"/>
+        <PropertyColumn Property="x => x!.DeactivationReportsCount" Resizable="true"/>
+
+        <PropertyColumn Property="x => x!.BannerRefreshSeconds" Resizable="true"/>
+        <PropertyColumn Property="x => x!.Chest1EntryCoin" Resizable="true"/>
+        <PropertyColumn Property="x => x!.Chest2EntryCoin" Resizable="true"/>
+        <PropertyColumn Property="x => x!.MinPayoutCredit" Resizable="true" />
+        <PropertyColumn Property="x => x!.RandomRefresh" Resizable="true">
+            <EditTemplate>
+                <MudCheckBox Label="RandomRefresh" @bind-Checked="context.Item!.RandomRefresh"/>
+            </EditTemplate>
+        </PropertyColumn>
+        <PropertyColumn Property="x => x!.LtrSlide" Resizable="true">
+            <EditTemplate>
+                <MudCheckBox Label="LtrSlide" @bind-Checked="context.Item!.LtrSlide"/>
+            </EditTemplate>
+        </PropertyColumn>
+
+        <TemplateColumn CellClass="justify-end" StickyRight="true" Resizable="true">
+            <CellTemplate>
+                <MudIconButton Size="@Size.Small" Icon="@Icons.Material.Outlined.Edit" OnClick="@context.Actions.StartEditingItemAsync"/>
+            </CellTemplate>
+        </TemplateColumn>
+    </Columns>
+</MudDataGrid>
+
+@code {
+
+    MudDataGrid<AppSettingsDTO>? DataGrid { get; set; }
+
+    private List<AppSettingsDTO>? AppSettingsList = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        var result = await AppSettingsService.ListAsync();
+        if (result.IsSuccess)
+        {
+            AppSettingsList = result.Value.ToList();
+        }
+
+        result.ShowMessageOnFailure(DialogService);
+    }
+
+    async Task CommittedItemChanges(AppSettingsDTO appSettingsDto)
+    {
+        var result = await AppSettingsService.UpdateAsync(appSettingsDto);
+
+        if (result.IsSuccess)
+        {
+            AppSettingsList?.RemoveAll(x => x.Id == appSettingsDto.Id);
+            AppSettingsList?.Add(appSettingsDto);
+        }
+
+        result.ShowMessageOnFailure(DialogService);
+    }
+
+}

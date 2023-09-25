@@ -1,0 +1,132 @@
+@page "/ShopItems"
+
+@attribute [Authorize(Roles = "Admin")]
+
+@using System.Net.Http.Json
+@using GameServer.Client.Services.Contracts
+@using GameServer.SharedKernel.ApiModels
+@using GameServer.Client.Helpers
+@inject HttpClient HttpClient
+@inject IDialogService DialogService
+@inject IShopItemService ShopItemService
+
+<MudDataGrid ColumnResizeMode="ResizeMode.Container" @ref="DataGrid" T="ShopItemDTO" Items="@ShopItemList" ReadOnly="false" EditMode="DataGridEditMode.Form" MultiSelection="true"
+             StartedEditingItem="@StartedEditingItem" CanceledEditingItem="@CanceledEditingItem" CommittedItemChanges="@CommittedItemChanges"
+             Bordered="true" Dense="true" EditTrigger="DataGridEditTrigger.Manual">
+    <ToolBarContent>
+        <MudButton OnClick="@AddItem" Color="@Color.Success" Class="add-item-btn">Add Item</MudButton>
+        <MudButton Disabled="@(RowsSelected <= 0)" OnClick="@RemoveItem" Color="@Color.Error" Class="remove-item-btn">Remove Items</MudButton>
+    </ToolBarContent>
+    <Columns>
+        <SelectColumn T="ShopItemDTO"></SelectColumn>
+        <PropertyColumn Property="x => x!.Id" IsEditable="false"/>
+        <PropertyColumn Property="x => x!.Title"/>
+        <PropertyColumn Property="x => x!.Order"/>
+        <PropertyColumn Property="x => x!.Sku"/>
+        <PropertyColumn Property="x => x!.Coins" Resizable="true"/>
+        <PropertyColumn Property="x => x!.Price" Resizable="true"/>
+        <PropertyColumn Property="x => x!.Consumable" Resizable="true">
+            <EditTemplate>
+                <MudCheckBox Label="Consumable" @bind-Checked="context.Item!.Consumable"/>
+            </EditTemplate>
+        </PropertyColumn>
+        <PropertyColumn Property="x => x!.IsActive" Resizable="true">
+            <EditTemplate>
+                <MudCheckBox Label="Is Active" @bind-Checked="context.Item!.IsActive"/>
+            </EditTemplate>
+        </PropertyColumn>
+        <PropertyColumn Property="x => x!.Description" Resizable="true"/>
+
+        <TemplateColumn CellClass="justify-end" StickyRight="true">
+            <CellTemplate>
+                <MudIconButton Size="@Size.Small" Icon="@Icons.Material.Outlined.Edit" OnClick="@context.Actions.StartEditingItemAsync"/>
+            </CellTemplate>
+        </TemplateColumn>
+    </Columns>
+</MudDataGrid>
+
+@code {
+
+    MudDataGrid<ShopItemDTO>? DataGrid { get; set; }
+
+    private List<ShopItemDTO>? ShopItemList = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        var result = await ShopItemService.ListAsync();
+        if (result.IsSuccess)
+        {
+            ShopItemList = result.Value.ToList();
+        }
+
+        result.ShowMessageOnFailure(DialogService);
+    }
+
+    public int RowsSelected => DataGrid?.SelectedItems.Count ?? 0;
+
+    // events
+    void StartedEditingItem(ShopItemDTO shopItemDto)
+    {
+    //_events.Insert(0, $"Event = StartedEditingItem, Data = {System.Text.Json.JsonSerializer.Serialize(game)}");
+    }
+
+    void CanceledEditingItem(ShopItemDTO shopItemDto)
+    {
+    //_events.Insert(0, $"Event = CanceledEditingItem, Data = {System.Text.Json.JsonSerializer.Serialize(game)}");
+    }
+
+    async Task CommittedItemChanges(ShopItemDTO shopItemDto)
+    {
+        var result = await ShopItemService.UpdateAsync(shopItemDto);
+
+        if (result.IsSuccess)
+        {
+            ShopItemList?.RemoveAll(x => x.Id == shopItemDto.Id);
+            ShopItemList?.Add(shopItemDto);
+        }
+
+        result.ShowMessageOnFailure(DialogService);
+    }
+
+    async Task AddItem()
+    {
+        var result = await ShopItemService.CreateAsync(new ShopItemDTO
+        {
+            Title = "Package Title",
+            Sku = "sku1"
+        });
+
+        if (result.IsSuccess)
+        {
+            ShopItemList?.Add(result.Value);
+
+            DataGrid?.SetEditingItemAsync(result.Value);
+        }
+
+        result.ShowMessageOnFailure(DialogService);
+    }
+
+    async Task RemoveItem()
+    {
+        if (RowsSelected > 0)
+        {
+            var delete = await DialogService.ShowMessageBox("Delete",
+                $"Do you want to delete {RowsSelected} rows?", yesText: "Delete", cancelText: "Cancel");
+            if (delete == true)
+            {
+                foreach (var shopItem in DataGrid?.SelectedItems!)
+                {
+                    var result = await ShopItemService.DeleteAsync(shopItem.Id);
+
+                    if (result.IsSuccess)
+                    {
+                        ShopItemList?.RemoveAll(x => x.Id == shopItem.Id);
+                    }
+
+                    result.ShowMessageOnFailure(DialogService);
+                }
+            }
+        }
+    }
+
+}

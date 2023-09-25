@@ -1,0 +1,34 @@
+﻿@using GameServer.Client.Helpers
+@inject NavigationManager navigationManager
+
+<MudChip Icon="@Icon" Color="@((!string.IsNullOrEmpty(NavigateTo) && navigationManager.Page().Contains(NavigateTo)) ? Color.Secondary : Color.Primary)" OnClick="Navigate">@Title</MudChip>
+
+@code {
+
+    [Parameter]
+    public string NavigateTo { get; set; } = null!;
+
+    [Parameter]
+    public bool Navigable { get; set; } = true;
+
+    [Parameter]
+    public string Icon { get; set; } = null!;
+
+    [Parameter]
+    public string Title { get; set; } = null!;
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+
+        navigationManager.LocationChanged += (o, e) => StateHasChanged();
+        
+        Console.WriteLine(navigationManager.Page());
+    }
+
+    void Navigate()
+    {
+        if (Navigable) navigationManager.NavigateTo(NavigateTo); 
+    }
+
+}

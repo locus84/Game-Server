@@ -1,0 +1,28 @@
+﻿@using System.Text.RegularExpressions
+@using System.ComponentModel.DataAnnotations
+@using GameServer.SharedKernel
+@inject IDialogService DialogService
+
+<MudDialog>
+    <DialogContent>
+        <MudImage class="myImage" Src="@ImageSrc" Elevation="25" />
+    </DialogContent>
+    <DialogActions>
+    </DialogActions>
+</MudDialog>
+
+<style>
+    .myImage {
+    max-width: 100vw; 
+    height: auto;
+    max-height:100vh;
+    width:auto;
+    }
+</style>
+
+@code {
+    [CascadingParameter] MudDialogInstance? MudDialog { get; set; }
+    
+    [Parameter]
+    public string? ImageSrc { get; set; }
+}

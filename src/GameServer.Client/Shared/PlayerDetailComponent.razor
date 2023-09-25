@@ -1,0 +1,23 @@
+﻿@using GameServer.Client.Services.Contracts
+@using GameServer.SharedKernel.ApiModels
+@inject IPlayerService PlayerService
+
+<div>Name: @Player.Name | Username: @Player.Username | Debit Card: @Player.DebitCard</div>
+
+@code {
+
+    [Parameter]
+    public int PlayerId { get; set; }
+
+    private PlayerDTO Player = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        var result = await PlayerService.GetByIdAsync(PlayerId);
+        if (result.IsSuccess)
+        {
+            Player = result.Value;
+            StateHasChanged();
+        }
+    }
+}

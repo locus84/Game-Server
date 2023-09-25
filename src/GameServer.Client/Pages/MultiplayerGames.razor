@@ -1,0 +1,106 @@
+﻿@page "/multiplayerGames"
+@page "/multiplayerGames/{playerId:int}"
+
+@attribute [Authorize(Roles = "Admin")]
+
+@using System.Net.Http.Json
+@using GameServer.Client.Services.Contracts
+@using GameServer.SharedKernel.ApiModels
+@using GameServer.Client.Helpers
+@inject HttpClient HttpClient
+@inject IDialogService DialogService
+@inject IMultiplayerGameService MultiplayerGameService
+@inject IPlayerService PlayerService
+
+<MudDataGrid ColumnResizeMode="ResizeMode.Container" @ref="DataGrid" T="MultiplayerGameDTO" Items="@MultiplayerGameList" ReadOnly="false" EditMode="DataGridEditMode.Form" MultiSelection="true"
+             CommittedItemChanges="@CommittedItemChanges" FilterMode="DataGridFilterMode.Simple" Bordered="true" Dense="true" EditTrigger="DataGridEditTrigger.Manual">
+    <ToolBarContent>
+        @* <MudButton OnClick="@AddItem" Color="@Color.Success" Class="add-item-btn">Add Item</MudButton> *@
+        <MudButton Disabled="@(RowsSelected <= 0)" OnClick="@RemoveItem" Color="@Color.Error" Class="remove-item-btn">Remove Items</MudButton>
+    </ToolBarContent>
+    <Columns>
+        <SelectColumn T="MultiplayerGameDTO"></SelectColumn>
+        <HierarchyColumn T="MultiplayerGameDTO"/>
+        <PropertyColumn Property="x => x!.Id" Filterable="true" IsEditable="false"/>
+        <PropertyColumn Property="x => x!.GameId" Filterable="true" Resizable="true"/>
+        <PropertyColumn Property="x => x!.EntryCoin" Filterable="true" Resizable="true"/>
+        <PropertyColumn Property="x => x!.PlayerOneId" Filterable="true" Resizable="true"/>
+        <PropertyColumn Property="x => x!.PlayerTwoId" Filterable="true" Resizable="true"/>
+        <PropertyColumn Property="x => x!.StartTime" Filterable="true" Resizable="true"/>
+        <PropertyColumn Property="x => x!.EndTime" Filterable="true" Resizable="true"/>
+        <PropertyColumn Property="x => x!.WinnerPlayerId" Filterable="true" Resizable="true"/>
+
+        <TemplateColumn CellClass="justify-end" StickyRight="true">
+            <CellTemplate>
+                <MudIconButton Size="@Size.Small" Icon="@Icons.Material.Outlined.Edit" OnClick="@context.Actions.StartEditingItemAsync"/>
+            </CellTemplate>
+        </TemplateColumn>
+    </Columns>
+    @* <ChildRowContent> *@
+    @*     <PlayerDetailComponent PlayerId="context.Item.PlayerId" /> *@
+    @* </ChildRowContent> *@
+    @* <PagerContent> *@
+    @*     <MudDataGridPager T="MultiplayerGameDTO"/> *@
+    @* </PagerContent> *@
+
+</MudDataGrid>
+
+@code {
+
+    [Parameter]
+    public int? PlayerId { get; set; }
+
+    MudDataGrid<MultiplayerGameDTO>? DataGrid { get; set; }
+
+    private List<MultiplayerGameDTO>? MultiplayerGameList = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        var result = await (PlayerId.HasValue ? MultiplayerGameService.ListByPlayerIdAsync(PlayerId.Value) : MultiplayerGameService.ListAsync());
+        if (result.IsSuccess)
+        {
+            MultiplayerGameList = result.Value.ToList();
+        }
+
+        result.ShowMessageOnFailure(DialogService);
+    }
+
+    public int RowsSelected => DataGrid?.SelectedItems.Count ?? 0;
+
+    async Task CommittedItemChanges(MultiplayerGameDTO multiplayerGame)
+    {
+        var result = await MultiplayerGameService.UpdateAsync(multiplayerGame);
+
+        if (result.IsSuccess)
+        {
+            MultiplayerGameList?.RemoveAll(x => x.Id == multiplayerGame.Id);
+            MultiplayerGameList?.Add(multiplayerGame);
+        }
+
+        result.ShowMessageOnFailure(DialogService);
+    }
+
+    async Task RemoveItem()
+    {
+        if (RowsSelected > 0)
+        {
+            var delete = await DialogService.ShowMessageBox("Delete",
+                $"Do you want to delete {RowsSelected} rows?", yesText: "Delete", cancelText: "Cancel");
+            if (delete == true)
+            {
+                foreach (var payout in DataGrid?.SelectedItems!)
+                {
+                    var result = await MultiplayerGameService.DeleteAsync(payout.Id);
+
+                    if (result.IsSuccess)
+                    {
+                        MultiplayerGameList?.RemoveAll(x => x.Id == payout.Id);
+                    }
+
+                    result.ShowMessageOnFailure(DialogService);
+                }
+            }
+        }
+    }
+
+}

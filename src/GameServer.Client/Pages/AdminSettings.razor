@@ -1,0 +1,57 @@
+@page "/Settings/Admin"
+
+@attribute [Authorize(Roles = "Admin")]
+
+@using GameServer.Client.Services.Contracts
+@using GameServer.SharedKernel.ApiModels
+@using GameServer.Client.Helpers
+@inject IDialogService DialogService
+@inject IAdminSettingsService AdminSettingsService
+
+<MudDataGrid ColumnResizeMode="ResizeMode.Container" @ref="DataGrid" T="AdminSettingsDTO" Items="@AdminSettingsList" ReadOnly="false"
+             EditMode="DataGridEditMode.Form" MultiSelection="true" CommittedItemChanges="@CommittedItemChanges"
+             Bordered="true" Dense="true" EditTrigger="DataGridEditTrigger.Manual">
+    <Columns>
+        <PropertyColumn Property="x => x!.Id" IsEditable="false"/>
+        <PropertyColumn Property="x => x!.FirebaseKey" Resizable="true"/>
+        <PropertyColumn Property="x => x!.MaxReferralCount" Resizable="true"/>
+        <PropertyColumn Property="x => x!.EachReferralCoin" Resizable="true"/>
+        
+        <TemplateColumn CellClass="justify-end" StickyRight="true" Resizable="true">
+            <CellTemplate>
+                <MudIconButton Size="@Size.Small" Icon="@Icons.Material.Outlined.Edit" OnClick="@context.Actions.StartEditingItemAsync"/>
+            </CellTemplate>
+        </TemplateColumn>
+    </Columns>
+</MudDataGrid>
+
+@code {
+
+    MudDataGrid<AdminSettingsDTO>? DataGrid { get; set; }
+
+    private List<AdminSettingsDTO>? AdminSettingsList = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        var result = await AdminSettingsService.ListAsync();
+        if (result.IsSuccess)
+        {
+            AdminSettingsList = result.Value.ToList();
+        }
+
+        result.ShowMessageOnFailure(DialogService);
+    }
+    
+    async Task CommittedItemChanges(AdminSettingsDTO adminSettingsDto)
+    {
+        var result = await AdminSettingsService.UpdateAsync(adminSettingsDto);
+
+        if (result.IsSuccess)
+        {
+            AdminSettingsList?.RemoveAll(x => x.Id == adminSettingsDto.Id);
+            AdminSettingsList?.Add(adminSettingsDto);
+        }
+
+        result.ShowMessageOnFailure(DialogService);
+    }
+}

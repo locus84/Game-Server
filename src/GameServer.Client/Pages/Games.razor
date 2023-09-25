@@ -1,0 +1,143 @@
+﻿@page "/Games"
+
+@attribute [Authorize(Roles = "Admin")]
+
+@using System.Net.Http.Json
+@using GameServer.Client.Services.Contracts
+@using GameServer.SharedKernel.ApiModels
+@using GameServer.Client.Helpers
+@inject HttpClient HttpClient
+@inject IDialogService DialogService
+@inject IGameService GameService
+
+<MudDataGrid ColumnResizeMode="ResizeMode.Container" @ref="DataGrid" T="GameDTO" Items="@GameList" ReadOnly="false" EditMode="DataGridEditMode.Form" MultiSelection="true"
+    StartedEditingItem="@StartedEditingItem" CanceledEditingItem="@CanceledEditingItem" CommittedItemChanges="@CommittedItemChanges"
+    Bordered="true" Dense="true" EditTrigger="DataGridEditTrigger.Manual">
+    <ToolBarContent>
+        <MudButton OnClick="@AddItem" Color="@Color.Success" Class="add-item-btn">Add Item</MudButton>
+        <MudButton Disabled="@(RowsSelected <= 0)" OnClick="@RemoveItem" Color="@Color.Error" Class="remove-item-btn">Remove Items</MudButton>
+    </ToolBarContent>
+    <Columns>
+        <SelectColumn T="GameDTO"></SelectColumn>
+        <PropertyColumn Property="x => x!.Id" IsEditable="false" />
+        <PropertyColumn Property="x => x!.Name" Resizable="true"/>
+        <PropertyColumn Property="x => x!.TurnBased" Title="Turn Based" Resizable="true">
+                        <EditTemplate>
+                            <MudCheckBox Label="Turn Based" @bind-Checked="context.Item!.TurnBased" />
+                        </EditTemplate>
+        </PropertyColumn>
+        <PropertyColumn Property="x => x!.TurnTimeout" Title="Turn Timeout" Resizable="true"/>
+        <PropertyColumn Property="x => x!.EntryCoin1" Title="Coin 1" Resizable="true"/>
+        <PropertyColumn Property="x => x!.EntryCoin2" Title="Coin 2" Resizable="true"/>
+        <PropertyColumn Property="x => x!.EntryCoin3" Title="Coin 3" Resizable="true"/>
+        <PropertyColumn Property="x => x!.Enabled" Resizable="true">
+            <EditTemplate>
+                <MudCheckBox Label="Enabled" @bind-Checked="context.Item!.Enabled" />
+            </EditTemplate>
+        </PropertyColumn>       
+        <PropertyColumn Property="x => x!.SearchProvince" Resizable="true">
+            <EditTemplate>
+                <MudCheckBox Label="SearchProvince" @bind-Checked="context.Item!.SearchProvince" />
+            </EditTemplate>
+        </PropertyColumn>    
+        <PropertyColumn Property="x => x!.SearchName" Resizable="true">
+            <EditTemplate>
+                <MudCheckBox Label="SearchName" @bind-Checked="context.Item!.SearchName" />
+            </EditTemplate>
+        </PropertyColumn>       
+        <PropertyColumn Property="x => x!.SearchSex" Resizable="true">
+            <EditTemplate>
+                <MudCheckBox Label="SearchSex" @bind-Checked="context.Item!.SearchSex" />
+            </EditTemplate>
+        </PropertyColumn>
+
+        <TemplateColumn CellClass="justify-end" StickyRight="true">
+            <CellTemplate>
+                <MudIconButton Size="@Size.Small" Icon="@Icons.Material.Outlined.Edit" OnClick="@context.Actions.StartEditingItemAsync"/>
+            </CellTemplate>
+        </TemplateColumn>
+    </Columns>
+</MudDataGrid>
+
+@code {
+    
+    MudDataGrid<GameDTO>? DataGrid { get; set; }
+
+    private List<GameDTO>? GameList = new List<GameDTO>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        var result = await GameService.ListAsync();
+        if (result.IsSuccess)
+        {
+            GameList = result.Value.ToList();
+        }
+        
+        result.ShowMessageOnFailure(DialogService);
+    }
+
+    public int RowsSelected => DataGrid?.SelectedItems.Count ?? 0;
+
+    // events
+    void StartedEditingItem(GameDTO game)
+    {
+        //_events.Insert(0, $"Event = StartedEditingItem, Data = {System.Text.Json.JsonSerializer.Serialize(game)}");
+    }
+
+    void CanceledEditingItem(GameDTO game)
+    {
+        //_events.Insert(0, $"Event = CanceledEditingItem, Data = {System.Text.Json.JsonSerializer.Serialize(game)}");
+    }
+
+    async Task CommittedItemChanges(GameDTO game)
+    {
+        var result = await GameService.UpdateAsync(game);
+
+        if (result.IsSuccess)
+        {
+            GameList?.RemoveAll(x => x.Id == game.Id);
+            GameList?.Add(game);
+        }
+        
+        result.ShowMessageOnFailure(DialogService);
+    }
+
+    async Task AddItem()
+    {
+        var result = await GameService.CreateAsync(new GameDTO
+        {
+            Name = "Game Name ..."
+        });
+        if (result.IsSuccess)
+        {
+            GameList?.Add(result.Value);
+
+            DataGrid?.SetEditingItemAsync(result.Value);
+        }
+        
+        result.ShowMessageOnFailure(DialogService);
+    }
+
+    async Task RemoveItem()
+    {
+        if (RowsSelected > 0)
+        {
+            var delete = await DialogService.ShowMessageBox("Delete",
+                $"Do you want to delete {RowsSelected} rows?", yesText: "Delete", cancelText: "Cancel");
+            if (delete == true)
+            {
+                foreach (var game in DataGrid?.SelectedItems!)
+                {
+                    var result = await GameService.DeleteAsync(game.Id);
+
+                    if (result.IsSuccess)
+                    {
+                        GameList?.RemoveAll(x => x.Id == game.Id);
+                    }
+                    
+                    result.ShowMessageOnFailure(DialogService);
+                }
+            }
+        }
+    }
+}

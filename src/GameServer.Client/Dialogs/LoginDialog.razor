@@ -1,0 +1,55 @@
+﻿@using System.Text.RegularExpressions
+@using System.ComponentModel.DataAnnotations
+@using GameServer.SharedKernel
+@inject IDialogService DialogService
+@inject IdentityAuthenticationStateProvider authStateProvider
+@inject NavigationManager navigationManager
+
+<MudDialog>
+    <DialogContent>
+        <MudForm @ref="form" @bind-IsValid="@success" @bind-Errors="@errors" Model="loginParameters" >
+            <MudTextField T="string" Label="Username" Required="true" RequiredError="Username is required!" @bind-Value="loginParameters.UserName"/>
+            <MudTextField T="string" Label="Password" HelperText="Choose a strong password" @bind-Value="loginParameters.Password"
+                          InputType="InputType.Password" Required="true" RequiredError="Password is required!" />
+
+            <MudCheckBox T="bool" @bind-Value="loginParameters.RememberMe" RequiredError="Remember me?" Label="Remember me" />
+        </MudForm>
+    </DialogContent>
+    <DialogActions>
+        <MudButton OnClick="OpenRegisterDialog">Register</MudButton>
+        <MudButton Color="Color.Primary" OnClick="Submit">Login</MudButton>
+    </DialogActions>
+</MudDialog>
+
+@code {
+    [CascadingParameter] MudDialogInstance? MudDialog { get; set; }
+
+    async Task Submit()
+    {
+        error = null;
+        try
+        {
+            await authStateProvider.Login(loginParameters);
+            
+            navigationManager.NavigateTo("");
+        }
+        catch (Exception ex)
+        {
+            error = ex.Message;
+        }
+        
+        MudDialog?.Close(DialogResult.Ok(true));
+    }
+    
+    void OpenRegisterDialog()
+    {
+        var options = new DialogOptions { CloseOnEscapeKey = true };
+        DialogService.Show<RegisterDialog>("Register", options);
+    }
+
+    LoginParameters loginParameters { get; set; } = new();
+    bool success;
+    string[] errors = { };
+    MudForm? form;
+    string? error { get; set; }
+}

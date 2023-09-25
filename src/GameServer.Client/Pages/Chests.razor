@@ -1,0 +1,116 @@
+﻿@page "/Chests"
+
+@attribute [Authorize(Roles = "Admin")]
+
+@using System.Net.Http.Json
+@using GameServer.Client.Helpers
+@using GameServer.Client.Services.Contracts
+@using GameServer.SharedKernel.ApiModels
+@inject HttpClient HttpClient
+@inject IDialogService DialogService
+@inject IChestService ChestService
+
+<MudDataGrid ColumnResizeMode="ResizeMode.Container" @ref="DataGrid" T="ChestDTO" Items="@ChestList" ReadOnly="false" EditMode="DataGridEditMode.Form" MultiSelection="true"
+    StartedEditingItem="@StartedEditingItem" CanceledEditingItem="@CanceledEditingItem" CommittedItemChanges="@CommittedItemChanges"
+    Bordered="true" Dense="true" EditTrigger="DataGridEditTrigger.Manual">
+    <ToolBarContent>
+        <MudButton OnClick="@AddItem" Color="@Color.Success" Class="add-item-btn">Add Item</MudButton>
+        <MudButton Disabled="@(RowsSelected <= 0)" OnClick="@RemoveItem" Color="@Color.Error" Class="remove-item-btn">Remove Items</MudButton>
+    </ToolBarContent>
+    <Columns>
+        <SelectColumn T="ChestDTO"></SelectColumn>
+        <PropertyColumn Property="x => x!.Id" IsEditable="false" />
+        <PropertyColumn Property="x => x!.Reward" Resizable="true"/>
+        <PropertyColumn Property="x => x!.Count" Resizable="true"/>
+        <PropertyColumn Property="x => x!.Type" Resizable="true"/>
+
+        <TemplateColumn CellClass="justify-end" StickyRight="true">
+            <CellTemplate>
+                <MudIconButton Size="@Size.Small" Icon="@Icons.Material.Outlined.Edit" OnClick="@context.Actions.StartEditingItemAsync"/>
+            </CellTemplate>
+        </TemplateColumn>
+    </Columns>
+</MudDataGrid>
+
+@code {
+    
+    MudDataGrid<ChestDTO>? DataGrid { get; set; }
+
+    private List<ChestDTO>? ChestList = new List<ChestDTO>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        var result = await ChestService.ListAsync();
+        if (result.IsSuccess)
+        {
+            ChestList = result.Value.ToList();
+        }
+        
+        result.ShowMessageOnFailure(DialogService);
+    }
+
+    public int RowsSelected => DataGrid?.SelectedItems.Count ?? 0;
+
+    // events
+    void StartedEditingItem(ChestDTO chest)
+    {
+        //_events.Insert(0, $"Event = StartedEditingItem, Data = {System.Text.Json.JsonSerializer.Serialize(chest)}");
+    }
+
+    void CanceledEditingItem(ChestDTO chest)
+    {
+        //_events.Insert(0, $"Event = CanceledEditingItem, Data = {System.Text.Json.JsonSerializer.Serialize(chest)}");
+    }
+
+    async Task CommittedItemChanges(ChestDTO chest)
+    {
+        var result = await ChestService.UpdateAsync(chest);
+
+        if (result.IsSuccess)
+        {
+            ChestList?.RemoveAll(x => x.Id == chest.Id);
+            ChestList?.Add(chest);
+        }
+        
+        result.ShowMessageOnFailure(DialogService);
+    }
+
+    async Task AddItem()
+    {
+        var result = await ChestService.CreateAsync(new ChestDTO
+        {
+            Reward = 100
+        });
+        if (result.IsSuccess)
+        {
+            ChestList?.Add(result.Value);
+
+            DataGrid?.SetEditingItemAsync(result.Value);
+        }
+        
+        result.ShowMessageOnFailure(DialogService);
+    }
+
+    async Task RemoveItem()
+    {
+        if (RowsSelected > 0)
+        {
+            var delete = await DialogService.ShowMessageBox("Delete",
+                $"Do you want to delete {RowsSelected} rows?", yesText: "Delete", cancelText: "Cancel");
+            if (delete == true)
+            {
+                foreach (var chest in DataGrid?.SelectedItems!)
+                {
+                    var result = await ChestService.DeleteAsync(chest.Id);
+
+                    if (result.IsSuccess)
+                    {
+                        ChestList?.RemoveAll(x => x.Id == chest.Id);
+                    }
+                    
+                    result.ShowMessageOnFailure(DialogService);
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,107 @@
+﻿@using GameServer.Client.Dialogs;
+@using GameServer.Client.Helpers
+@inherits LayoutComponentBase
+@inject IDialogService DialogService
+@inject NavigationManager navigationManager
+@inject IdentityAuthenticationStateProvider authStateProvider
+
+<MudThemeProvider/>
+<MudDialogProvider CloseButton="true" Position="DialogPosition.Center" CloseOnEscapeKey="true"/>
+<MudSnackbarProvider/>
+
+<MudLayout>
+    <MudAppBar Fixed="false" Dense="true" Elevation="0">
+        <AuthorizeView Roles="Admin">
+            <Authorized>
+                <MudMenu >
+                    <ActivatorContent>
+                        <MenuComponent Icon="@Icons.Material.Filled.Games" NavigateTo="games" Title="Games"/>
+                    </ActivatorContent>
+                </MudMenu>
+                <MudMenu>
+                    <ActivatorContent>
+                        <MenuComponent Icon="@Icons.Material.Filled.Person" NavigateTo="players" Title="Players"/>
+                    </ActivatorContent>
+                </MudMenu>
+                <MudMenu>
+                    <ActivatorContent>
+                        <MenuComponent Icon="@Icons.Material.Filled.Shop2" NavigateTo="shopitems" Title="Shop"/>
+                    </ActivatorContent>
+                </MudMenu>
+
+                <MudMenu ActivationEvent="@MouseEvent.MouseOver">
+                    <ActivatorContent>
+                        <MenuComponent Icon="@Icons.Material.Filled.Message" Title="Messages" Navigable="false" NavigateTo="messages"></MenuComponent>
+                    </ActivatorContent>
+                    <ChildContent>
+                        <MudStack Spacing="2">
+                            <MenuComponent Icon="@Icons.Material.Filled.Inbox" Title="Inbox" NavigateTo="messages/inboxes"/>
+                            <MenuComponent Icon="@Icons.Material.Filled.Notifications" Title="Pushes" NavigateTo="messages/pushes"/>
+                        </MudStack>
+                    </ChildContent>
+                </MudMenu>
+                <MudMenu>
+                    <ActivatorContent>
+                        <MenuComponent Icon="@Icons.Material.Filled.CardGiftcard" NavigateTo="chests" Title="Chests"/>
+                    </ActivatorContent>
+                </MudMenu>                
+                <MudMenu>
+                    <ActivatorContent>
+                        <MenuComponent Icon="@Icons.Material.Filled.FileUpload" NavigateTo="filemanager" Title="Files"/>
+                    </ActivatorContent>
+                </MudMenu>
+                <MudMenu ActivationEvent="@MouseEvent.MouseOver">
+                    <ActivatorContent>
+                        <MenuComponent Icon="@Icons.Material.Filled.Settings" Title="Settings" Navigable="false" NavigateTo="settings"/>
+                    </ActivatorContent>
+                    <ChildContent>
+                        <MudStack Spacing="2">
+                            <MenuComponent Icon="@Icons.Material.Filled.Apps" Title="App Settings" NavigateTo="settings/app"/>
+                            <MenuComponent Icon="@Icons.Material.Filled.AdminPanelSettings" Title="Admin Settings" NavigateTo="settings/admin"/>
+                        </MudStack>
+                    </ChildContent>
+                </MudMenu>
+                <MudSpacer/>
+                <MudMenu>
+                    <ActivatorContent>
+                        <MudButton Variant="Variant.Filled" StartIcon="@Icons.Material.Filled.Logout" OnClick="Logout" Color="Color.Secondary" Size="Size.Large">Logout</MudButton>
+                    </ActivatorContent>
+                </MudMenu>
+            </Authorized>
+            <NotAuthorized>
+                <MudMenu>
+                    <ActivatorContent>
+                        <MudButton Variant="Variant.Filled" StartIcon="@Icons.Material.Filled.Login" OnClick="ShowLoginPop" Color="Color.Secondary" Size="Size.Large">Login | Register</MudButton>
+                    </ActivatorContent>
+                </MudMenu>
+            </NotAuthorized>
+        </AuthorizeView>
+    </MudAppBar>
+    <MudMainContent>
+        <MudContainer MaxWidth="MaxWidth.ExtraExtraLarge" Class="my-3 pt-3">
+            @Body
+        </MudContainer>
+    </MudMainContent>
+</MudLayout>
+
+@code {
+    bool _drawerOpen = true;
+
+    void DrawerToggle()
+    {
+        _drawerOpen = !_drawerOpen;
+    }
+
+    void ShowLoginPop()
+    {
+        var options = new DialogOptions { CloseOnEscapeKey = true };
+        DialogService.Show<LoginDialog>("Login", options);
+    }
+
+    async Task Logout()
+    {
+        await authStateProvider.Logout();
+        navigationManager.NavigateTo("");
+    }
+
+}

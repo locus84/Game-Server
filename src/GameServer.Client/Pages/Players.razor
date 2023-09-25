@@ -1,0 +1,109 @@
+﻿@page "/Players"
+
+@attribute [Authorize(Roles = "Admin")]
+
+@using System.Net.Http.Json
+@using GameServer.Client.Services.Contracts
+@using GameServer.SharedKernel.ApiModels
+@using GameServer.Client.Helpers
+@inject HttpClient HttpClient
+@inject IDialogService DialogService
+@inject IPlayerService PlayerService
+@inject NavigationManager NavigationManager
+
+<MudDataGrid ColumnResizeMode="ResizeMode.Container" @ref="DataGrid" T="PlayerDTO" Items="@PlayerList" ReadOnly="false" EditMode="DataGridEditMode.Form" MultiSelection="true"
+             CommittedItemChanges="@CommittedItemChanges" FilterMode="DataGridFilterMode.Simple" Bordered="true" Dense="true" EditTrigger="DataGridEditTrigger.Manual">
+    <ToolBarContent>
+        @* <MudButton OnClick="@AddItem" Color="@Color.Success" Class="add-item-btn">Add Item</MudButton> *@
+        <MudButton Disabled="@(RowsSelected <= 0)" OnClick="@RemoveItem" Color="@Color.Error" Class="remove-item-btn">Remove Items</MudButton>
+    </ToolBarContent>
+    <Columns>
+        <SelectColumn T="PlayerDTO"></SelectColumn>
+        <PropertyColumn Property="x => x!.Id" Filterable="true" IsEditable="false"/>
+        <PropertyColumn Property="x => x!.Username" Filterable="true" Resizable="true"/>
+        <PropertyColumn Property="x => x!.Email" Filterable="true" Resizable="true"/>
+        <PropertyColumn Property="x => x!.PhoneNumber" Filterable="true" Resizable="true"/>
+        <PropertyColumn Property="x => x!.Name" Filterable="true" Resizable="true"/>
+        <PropertyColumn Property="x => x!.DisplayName" Filterable="true" Resizable="true"/>
+        <PropertyColumn Property="x => x!.Sex" Filterable="true" Resizable="true"/>
+        <PropertyColumn Property="x => x!.Province" Filterable="true" Resizable="true"/>
+        <PropertyColumn Property="x => x!.City" Filterable="true" Resizable="true"/>
+        <PropertyColumn Property="x => x!.DebitCard" Filterable="true" Resizable="true"/>
+        <PropertyColumn Property="x => x!.ReferralCode" Filterable="true" Resizable="true"/>
+        <PropertyColumn Property="x => x!.Coins" Filterable="true" Resizable="true"/>
+        <PropertyColumn Property="x => x!.Credit" Filterable="true" Resizable="true"/>
+        <PropertyColumn Property="x => x!.Reports" Filterable="true" Resizable="true"/>
+        <PropertyColumn Property="x => x!.DeactivationTime" Filterable="true" Resizable="true"/>
+        <PropertyColumn Property="x => x!.ReferredById" Filterable="true" Resizable="true"/>
+
+        <TemplateColumn StickyRight="true">
+            <CellTemplate>
+                <MudStack Row="true">
+                    <MudIconButton Size="@Size.Small" Icon="@Icons.Material.Outlined.Edit" OnClick="@context.Actions.StartEditingItemAsync"/>
+                    <MudButton Size="@Size.Small" OnClick="@(() => NavigationManager.NavigateTo($"/payouts/{context.Item!.Id}"))">Payouts</MudButton>
+                    <MudButton Size="@Size.Small" OnClick="@(() => NavigationManager.NavigateTo($"/multiplayerGames/{context.Item!.Id}"))">Games</MudButton>
+                </MudStack>
+            </CellTemplate>
+        </TemplateColumn>
+    </Columns>
+
+    <PagerContent>
+        <MudDataGridPager T="PlayerDTO"/>
+    </PagerContent>
+</MudDataGrid>
+
+@code {
+
+    MudDataGrid<PlayerDTO>? DataGrid { get; set; }
+
+    private List<PlayerDTO>? PlayerList = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        var result = await PlayerService.ListAsync();
+        if (result.IsSuccess)
+        {
+            PlayerList = result.Value.ToList();
+        }
+
+        result.ShowMessageOnFailure(DialogService);
+    }
+
+    public int RowsSelected => DataGrid?.SelectedItems.Count ?? 0;
+
+    async Task CommittedItemChanges(PlayerDTO player)
+    {
+        var result = await PlayerService.UpdateAsync(player);
+
+        if (result.IsSuccess)
+        {
+            PlayerList?.RemoveAll(x => x.Id == player.Id);
+            PlayerList?.Add(player);
+        }
+
+        result.ShowMessageOnFailure(DialogService);
+    }
+
+    async Task RemoveItem()
+    {
+        if (RowsSelected > 0)
+        {
+            var delete = await DialogService.ShowMessageBox("Delete",
+                $"Do you want to delete {RowsSelected} rows?", yesText: "Delete", cancelText: "Cancel");
+            if (delete == true)
+            {
+                foreach (var player in DataGrid?.SelectedItems!)
+                {
+                    var result = await PlayerService.DeleteAsync(player.Id);
+
+                    if (result.IsSuccess)
+                    {
+                        PlayerList?.RemoveAll(x => x.Id == player.Id);
+                    }
+
+                    result.ShowMessageOnFailure(DialogService);
+                }
+            }
+        }
+    }
+}

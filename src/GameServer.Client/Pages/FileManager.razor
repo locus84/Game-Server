@@ -1,0 +1,163 @@
+﻿@page "/fileManager"
+
+@attribute [Authorize(Roles = "Admin")]
+
+@using GameServer.Client.Dialogs
+@using GameServer.Client.Helpers
+@using GameServer.Client.Services.Contracts
+@using GameServer.SharedKernel
+@inject ISnackbar Snackbar
+@inject IFileService FileService
+@inject IDialogService DialogService
+@inject IJSRuntime JsRuntime
+@inject NavigationManager NavigationManager
+
+<MudStack Style="width: 100%">
+    <MudFileUpload T="IReadOnlyList<IBrowserFile>" OnFilesChanged="OnInputFileChanged" AppendMultipleFiles Hidden="false" Class="flex-1" InputClass="absolute mud-width-full mud-height-full overflow-hidden z-20" InputStyle="opacity:0"
+                   @ondragenter="@SetDragClass" @ondragleave="@ClearDragClass" @ondragend="@ClearDragClass">
+        <ButtonTemplate>
+            <MudPaper Height="200px" Outlined="true" Class="@DragClass">
+                <MudText Typo="Typo.h6">Drag and drop files here or click</MudText>
+                @foreach (var file in files)
+                {
+                    <MudChip Color="Color.Dark" Text="@file.Name"/>
+                }
+            </MudPaper>
+        </ButtonTemplate>
+    </MudFileUpload>
+    <MudToolBar DisableGutters="true" Class="gap-4">
+        <MudButton OnClick="Upload" Disabled="@(!files.Any())" Color="Color.Primary" Variant="Variant.Filled">Upload</MudButton>
+        <MudButton OnClick="Clear" Disabled="@(!files.Any())" Color="Color.Error" Variant="Variant.Filled">Clear</MudButton>
+    </MudToolBar>
+
+    <MudDataGrid ColumnResizeMode="ResizeMode.Container" @ref="DataGrid" T="FileObject" Items="@FileList" ReadOnly="false" EditMode="DataGridEditMode.Form" MultiSelection="true"
+                 Bordered="true" Dense="true" EditTrigger="DataGridEditTrigger.Manual">
+        <ToolBarContent>
+            <MudButton Disabled="@(RowsSelected <= 0)" OnClick="@RemoveItem" Color="@Color.Error" Class="remove-item-btn">Remove Items</MudButton>
+        </ToolBarContent>
+        <Columns>
+            <SelectColumn T="FileObject"></SelectColumn>
+            <PropertyColumn Property="x => x!.FileName" IsEditable="false"/>
+            <PropertyColumn Property="x => x!.FilePath" Resizable="true"/>
+
+            <TemplateColumn StickyRight="true">
+                <CellTemplate>
+                    <MudStack Row="true">
+                        <MudIconButton Size="@Size.Small" Icon="@Icons.Material.Outlined.ContentCopy" OnClick="@(() => CopyPath(context.Item!))"/>
+                        <MudIconButton Size="@Size.Small" Icon="@Icons.Material.Outlined.Image" OnClick="@(() => ShowImage(context.Item!))"/>
+                    </MudStack>
+                </CellTemplate>
+            </TemplateColumn>
+        </Columns>
+    </MudDataGrid>
+</MudStack>
+
+@code {
+
+    [Parameter]
+    public int? PlayerId { get; set; }
+
+    MudDataGrid<FileObject>? DataGrid { get; set; }
+
+    private List<FileObject>? FileList = new();
+
+    private static string DefaultDragClass = "relative rounded-lg border-2 border-dashed pa-4 mt-4 mud-width-full mud-height-full z-10";
+    private string DragClass = DefaultDragClass;
+    private List<IBrowserFile> files = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        await FetchList();
+    }
+
+    private async Task FetchList()
+    {
+        var result = await FileService.ListAsync();
+        if (result.IsSuccess)
+        {
+            FileList = result.Value.ToList();
+        }
+
+        result.ShowMessageOnFailure(DialogService);
+    }
+
+    private void OnInputFileChanged(InputFileChangeEventArgs e)
+    {
+        ClearDragClass();
+
+        files.AddRange(e.GetMultipleFiles());
+    }
+
+    private async Task Clear()
+    {
+        files.Clear();
+        ClearDragClass();
+        await Task.Delay(100);
+    }
+
+    private void CopyPath(FileObject fileObject)
+    {
+        JsRuntime.InvokeVoidAsync("navigator.clipboard.writeText", GetFilePath(fileObject));
+    }
+
+    private void ShowImage(FileObject fileObject)
+    {
+        var imageExtensions = new List<string> { ".JPG", ".JPEG", ".JPE", ".BMP", ".GIF", ".PNG" };
+        if(imageExtensions.Any(x=>fileObject.FilePath!.EndsWith(x, StringComparison.OrdinalIgnoreCase)))
+        {
+            DialogService.Show<ImageDialog>("Image", new DialogParameters<ImageDialog> { { x => x.ImageSrc, GetFilePath(fileObject) } });
+        }
+        else
+        {
+            JsRuntime.InvokeVoidAsync("eval", $"let _discard_ = open(`{GetFilePath(fileObject)}`, `_blank`)");
+        }
+    }
+
+    private string GetFilePath(FileObject fileObject) => NavigationManager.ToAbsoluteUri(fileObject.FilePath!).ToString();
+
+    private async Task Upload()
+    {
+        Snackbar.Configuration.PositionClass = Defaults.Classes.Position.BottomLeft;
+        var res = await FileService.BulkUploadAsync(files.ToArray());
+        if (!res.IsSuccess)
+            Snackbar.Add(res.Errors.First());
+        else
+        {
+            Snackbar.Add("Upload has been finished!");
+            await Clear();
+
+            await FetchList();
+        }
+    }
+
+    private void SetDragClass()
+    {
+        DragClass = $"{DefaultDragClass} mud-border-primary";
+    }
+
+    private void ClearDragClass()
+    {
+        DragClass = DefaultDragClass;
+    }
+
+    public int RowsSelected => DataGrid?.SelectedItems.Count ?? 0;
+
+    private async Task RemoveItem()
+    {
+        var delete = await DialogService.ShowMessageBox("Delete",
+            $"Do you want to delete {RowsSelected} rows?", yesText: "Delete", cancelText: "Cancel");
+        if (delete == true)
+        {
+            Console.WriteLine(DataGrid!.SelectedItems.First().FilePath);
+            var result = await FileService.BulkDeleteAsync(DataGrid!.SelectedItems.ToArray());
+
+            if (result.IsSuccess)
+            {
+                await FetchList();
+            }
+
+            result.ShowMessageOnFailure(DialogService);
+        }
+    }
+
+}

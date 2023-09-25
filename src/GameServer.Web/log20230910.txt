@@ -1,0 +1,547 @@
+2023-09-10 09:16:05.872 +03:30 [INF] User profile is available. Using 'C:\Users\Mahdi\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-09-10 09:16:06.835 +03:30 [WRN] There are multiple relationships between 'Player' and 'Player' without configured foreign key properties. This will cause Entity Framework to create shadow properties on 'Player' with names dependent on the discovery order. Consider configuring the foreign key properties using the [ForeignKey] attribute or in 'OnModelCreating'.
+2023-09-10 09:16:06.933 +03:30 [WRN] The foreign key property 'Player.PlayerId1' was created in shadow state because a conflicting property with the simple name 'PlayerId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2023-09-10 09:16:06.935 +03:30 [WRN] The foreign key property 'Player.PlayerId2' was created in shadow state because a conflicting property with the simple name 'PlayerId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2023-09-10 09:16:07.212 +03:30 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+PRAGMA journal_mode = 'wal';
+2023-09-10 09:16:07.253 +03:30 [WRN] There are multiple relationships between 'Player' and 'Player' without configured foreign key properties. This will cause Entity Framework to create shadow properties on 'Player' with names dependent on the discovery order. Consider configuring the foreign key properties using the [ForeignKey] attribute or in 'OnModelCreating'.
+2023-09-10 09:16:07.259 +03:30 [WRN] The foreign key property 'Player.PlayerId1' was created in shadow state because a conflicting property with the simple name 'PlayerId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2023-09-10 09:16:07.260 +03:30 [WRN] The foreign key property 'Player.PlayerId2' was created in shadow state because a conflicting property with the simple name 'PlayerId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2023-09-10 09:16:07.370 +03:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "AdminSettings" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_AdminSettings" PRIMARY KEY AUTOINCREMENT,
+    "FirebaseKey" TEXT NULL,
+    "MaxReferralCount" INTEGER NULL,
+    "EachReferralCoin" INTEGER NULL
+);
+2023-09-10 09:16:07.372 +03:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "Ads" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Ads" PRIMARY KEY AUTOINCREMENT,
+    "ShowingTime" TEXT NOT NULL,
+    "ExpirationHours" INTEGER NOT NULL,
+    "ExpirationViews" INTEGER NOT NULL,
+    "ExpirationClicks" INTEGER NOT NULL,
+    "ZoneId" TEXT NULL,
+    "ImageUrl" TEXT NULL,
+    "VideoUrl" TEXT NULL,
+    "AdvertiserUrl" TEXT NULL,
+    "Title" TEXT NULL,
+    "Icon" TEXT NULL,
+    "AdType" INTEGER NOT NULL,
+    "Description" TEXT NULL,
+    "CtaText" TEXT NULL,
+    "Views" INTEGER NOT NULL,
+    "Clicks" INTEGER NOT NULL
+);
+2023-09-10 09:16:07.375 +03:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "AppSettings" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_AppSettings" PRIMARY KEY AUTOINCREMENT,
+    "PlayerActivationDays" INTEGER NOT NULL,
+    "PlayerActivationPrice" INTEGER NOT NULL,
+    "DeactivationReportsCount" INTEGER NOT NULL,
+    "BannerRefreshSeconds" INTEGER NOT NULL,
+    "RandomRefresh" INTEGER NOT NULL,
+    "LtrSlide" INTEGER NOT NULL,
+    "Chest1EntryCoin" INTEGER NOT NULL,
+    "Chest2EntryCoin" INTEGER NOT NULL,
+    "MinPayoutCredit" INTEGER NOT NULL
+);
+2023-09-10 09:16:07.376 +03:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "AspNetRoles" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_AspNetRoles" PRIMARY KEY AUTOINCREMENT,
+    "Name" TEXT NULL,
+    "NormalizedName" TEXT NULL,
+    "ConcurrencyStamp" TEXT NULL
+);
+2023-09-10 09:16:07.378 +03:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "AspNetUsers" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_AspNetUsers" PRIMARY KEY AUTOINCREMENT,
+    "DeviceId" TEXT NULL,
+    "Name" TEXT NULL,
+    "DisplayName" TEXT NULL,
+    "Avatar" TEXT NULL,
+    "Sex" INTEGER NOT NULL,
+    "Province" TEXT NULL,
+    "City" TEXT NULL,
+    "DebitCard" TEXT NULL,
+    "ReferralCode" TEXT NULL,
+    "Coins" INTEGER NOT NULL,
+    "Credit" INTEGER NOT NULL,
+    "IsOnline" INTEGER NOT NULL,
+    "Reports" INTEGER NOT NULL,
+    "DeactivationTime" TEXT NULL,
+    "Registered" INTEGER NOT NULL,
+    "ReferredById" INTEGER NULL,
+    "PlayerId" INTEGER NULL,
+    "PlayerId1" INTEGER NULL,
+    "PlayerId2" INTEGER NULL,
+    "UserName" TEXT NULL,
+    "NormalizedUserName" TEXT NULL,
+    "Email" TEXT NULL,
+    "NormalizedEmail" TEXT NULL,
+    "EmailConfirmed" INTEGER NOT NULL,
+    "PasswordHash" TEXT NULL,
+    "SecurityStamp" TEXT NULL,
+    "ConcurrencyStamp" TEXT NULL,
+    "PhoneNumber" TEXT NULL,
+    "PhoneNumberConfirmed" INTEGER NOT NULL,
+    "TwoFactorEnabled" INTEGER NOT NULL,
+    "LockoutEnd" TEXT NULL,
+    "LockoutEnabled" INTEGER NOT NULL,
+    "AccessFailedCount" INTEGER NOT NULL,
+    CONSTRAINT "FK_AspNetUsers_AspNetUsers_PlayerId" FOREIGN KEY ("PlayerId") REFERENCES "AspNetUsers" ("Id"),
+    CONSTRAINT "FK_AspNetUsers_AspNetUsers_PlayerId1" FOREIGN KEY ("PlayerId1") REFERENCES "AspNetUsers" ("Id"),
+    CONSTRAINT "FK_AspNetUsers_AspNetUsers_PlayerId2" FOREIGN KEY ("PlayerId2") REFERENCES "AspNetUsers" ("Id"),
+    CONSTRAINT "FK_AspNetUsers_AspNetUsers_ReferredById" FOREIGN KEY ("ReferredById") REFERENCES "AspNetUsers" ("Id")
+);
+2023-09-10 09:16:07.381 +03:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "Chests" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Chests" PRIMARY KEY AUTOINCREMENT,
+    "Reward" INTEGER NOT NULL,
+    "Count" INTEGER NOT NULL,
+    "Type" INTEGER NOT NULL
+);
+2023-09-10 09:16:07.382 +03:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "Games" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Games" PRIMARY KEY AUTOINCREMENT,
+    "Name" TEXT NULL,
+    "EntryCoin1" INTEGER NOT NULL,
+    "EntryCoin2" INTEGER NOT NULL,
+    "EntryCoin3" INTEGER NOT NULL,
+    "TurnBased" INTEGER NOT NULL,
+    "TurnTimeout" INTEGER NOT NULL,
+    "Enabled" INTEGER NOT NULL,
+    "SearchProvince" INTEGER NOT NULL,
+    "SearchName" INTEGER NOT NULL
+);
+2023-09-10 09:16:07.384 +03:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "Inboxes" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Inboxes" PRIMARY KEY AUTOINCREMENT,
+    "Text" TEXT NULL,
+    "Title" TEXT NULL
+);
+2023-09-10 09:16:07.385 +03:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "PushNotifications" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_PushNotifications" PRIMARY KEY AUTOINCREMENT,
+    "Title" TEXT NULL,
+    "Text" TEXT NULL,
+    "SendTime" TEXT NULL
+);
+2023-09-10 09:16:07.387 +03:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "ShopItems" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_ShopItems" PRIMARY KEY AUTOINCREMENT,
+    "Order" INTEGER NOT NULL,
+    "Sku" TEXT NULL,
+    "Title" TEXT NULL,
+    "Coins" INTEGER NOT NULL,
+    "Price" INTEGER NOT NULL,
+    "Consumable" INTEGER NOT NULL,
+    "IsActive" INTEGER NOT NULL,
+    "Description" TEXT NULL
+);
+2023-09-10 09:16:07.388 +03:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "Statistics" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Statistics" PRIMARY KEY AUTOINCREMENT,
+    "PlayersCount" INTEGER NOT NULL,
+    "OnlinePlayers" INTEGER NOT NULL
+);
+2023-09-10 09:16:07.390 +03:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "AspNetRoleClaims" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_AspNetRoleClaims" PRIMARY KEY AUTOINCREMENT,
+    "RoleId" INTEGER NOT NULL,
+    "ClaimType" TEXT NULL,
+    "ClaimValue" TEXT NULL,
+    CONSTRAINT "FK_AspNetRoleClaims_AspNetRoles_RoleId" FOREIGN KEY ("RoleId") REFERENCES "AspNetRoles" ("Id") ON DELETE CASCADE
+);
+2023-09-10 09:16:07.394 +03:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "AspNetUserClaims" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_AspNetUserClaims" PRIMARY KEY AUTOINCREMENT,
+    "UserId" INTEGER NOT NULL,
+    "ClaimType" TEXT NULL,
+    "ClaimValue" TEXT NULL,
+    CONSTRAINT "FK_AspNetUserClaims_AspNetUsers_UserId" FOREIGN KEY ("UserId") REFERENCES "AspNetUsers" ("Id") ON DELETE CASCADE
+);
+2023-09-10 09:16:07.397 +03:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "AspNetUserLogins" (
+    "LoginProvider" TEXT NOT NULL,
+    "ProviderKey" TEXT NOT NULL,
+    "ProviderDisplayName" TEXT NULL,
+    "UserId" INTEGER NOT NULL,
+    CONSTRAINT "PK_AspNetUserLogins" PRIMARY KEY ("LoginProvider", "ProviderKey"),
+    CONSTRAINT "FK_AspNetUserLogins_AspNetUsers_UserId" FOREIGN KEY ("UserId") REFERENCES "AspNetUsers" ("Id") ON DELETE CASCADE
+);
+2023-09-10 09:16:07.399 +03:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "AspNetUserRoles" (
+    "UserId" INTEGER NOT NULL,
+    "RoleId" INTEGER NOT NULL,
+    CONSTRAINT "PK_AspNetUserRoles" PRIMARY KEY ("UserId", "RoleId"),
+    CONSTRAINT "FK_AspNetUserRoles_AspNetRoles_RoleId" FOREIGN KEY ("RoleId") REFERENCES "AspNetRoles" ("Id") ON DELETE CASCADE,
+    CONSTRAINT "FK_AspNetUserRoles_AspNetUsers_UserId" FOREIGN KEY ("UserId") REFERENCES "AspNetUsers" ("Id") ON DELETE CASCADE
+);
+2023-09-10 09:16:07.401 +03:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "AspNetUserTokens" (
+    "UserId" INTEGER NOT NULL,
+    "LoginProvider" TEXT NOT NULL,
+    "Name" TEXT NOT NULL,
+    "Value" TEXT NULL,
+    CONSTRAINT "PK_AspNetUserTokens" PRIMARY KEY ("UserId", "LoginProvider", "Name"),
+    CONSTRAINT "FK_AspNetUserTokens_AspNetUsers_UserId" FOREIGN KEY ("UserId") REFERENCES "AspNetUsers" ("Id") ON DELETE CASCADE
+);
+2023-09-10 09:16:07.404 +03:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "Chats" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Chats" PRIMARY KEY AUTOINCREMENT,
+    "PlayerId" INTEGER NOT NULL,
+    "ReceiverId" INTEGER NOT NULL,
+    "Content" TEXT NULL,
+    "SentTime" TEXT NOT NULL,
+    CONSTRAINT "FK_Chats_AspNetUsers_PlayerId" FOREIGN KEY ("PlayerId") REFERENCES "AspNetUsers" ("Id") ON DELETE CASCADE,
+    CONSTRAINT "FK_Chats_AspNetUsers_ReceiverId" FOREIGN KEY ("ReceiverId") REFERENCES "AspNetUsers" ("Id") ON DELETE CASCADE
+);
+2023-09-10 09:16:07.406 +03:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "Payouts" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Payouts" PRIMARY KEY AUTOINCREMENT,
+    "PlayerId" INTEGER NOT NULL,
+    "RequestTime" TEXT NOT NULL,
+    "PayoutTime" TEXT NOT NULL,
+    "Amount" INTEGER NOT NULL,
+    "Paid" INTEGER NOT NULL,
+    CONSTRAINT "FK_Payouts_AspNetUsers_PlayerId" FOREIGN KEY ("PlayerId") REFERENCES "AspNetUsers" ("Id")
+);
+2023-09-10 09:16:07.408 +03:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "MultiplayerGames" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_MultiplayerGames" PRIMARY KEY AUTOINCREMENT,
+    "GameId" INTEGER NOT NULL,
+    "EntryCoin" INTEGER NOT NULL,
+    "PlayerOneId" INTEGER NOT NULL,
+    "PlayerTwoId" INTEGER NOT NULL,
+    "StartTime" TEXT NULL,
+    "EndTime" TEXT NULL,
+    "WinnerPlayerId" INTEGER NOT NULL,
+    CONSTRAINT "FK_MultiplayerGames_AspNetUsers_PlayerOneId" FOREIGN KEY ("PlayerOneId") REFERENCES "AspNetUsers" ("Id") ON DELETE CASCADE,
+    CONSTRAINT "FK_MultiplayerGames_AspNetUsers_PlayerTwoId" FOREIGN KEY ("PlayerTwoId") REFERENCES "AspNetUsers" ("Id") ON DELETE CASCADE,
+    CONSTRAINT "FK_MultiplayerGames_AspNetUsers_WinnerPlayerId" FOREIGN KEY ("WinnerPlayerId") REFERENCES "AspNetUsers" ("Id") ON DELETE CASCADE,
+    CONSTRAINT "FK_MultiplayerGames_Games_GameId" FOREIGN KEY ("GameId") REFERENCES "Games" ("Id") ON DELETE CASCADE
+);
+2023-09-10 09:16:07.411 +03:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_AspNetRoleClaims_RoleId" ON "AspNetRoleClaims" ("RoleId");
+2023-09-10 09:16:07.413 +03:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX "RoleNameIndex" ON "AspNetRoles" ("NormalizedName");
+2023-09-10 09:16:07.415 +03:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_AspNetUserClaims_UserId" ON "AspNetUserClaims" ("UserId");
+2023-09-10 09:16:07.417 +03:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_AspNetUserLogins_UserId" ON "AspNetUserLogins" ("UserId");
+2023-09-10 09:16:07.418 +03:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_AspNetUserRoles_RoleId" ON "AspNetUserRoles" ("RoleId");
+2023-09-10 09:16:07.420 +03:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "EmailIndex" ON "AspNetUsers" ("NormalizedEmail");
+2023-09-10 09:16:07.422 +03:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_AspNetUsers_PlayerId" ON "AspNetUsers" ("PlayerId");
+2023-09-10 09:16:07.426 +03:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_AspNetUsers_PlayerId1" ON "AspNetUsers" ("PlayerId1");
+2023-09-10 09:16:07.427 +03:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_AspNetUsers_PlayerId2" ON "AspNetUsers" ("PlayerId2");
+2023-09-10 09:16:07.429 +03:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_AspNetUsers_ReferredById" ON "AspNetUsers" ("ReferredById");
+2023-09-10 09:16:07.431 +03:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX "UserNameIndex" ON "AspNetUsers" ("NormalizedUserName");
+2023-09-10 09:16:07.433 +03:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_Chats_PlayerId" ON "Chats" ("PlayerId");
+2023-09-10 09:16:07.435 +03:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_Chats_ReceiverId" ON "Chats" ("ReceiverId");
+2023-09-10 09:16:07.437 +03:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_MultiplayerGames_GameId" ON "MultiplayerGames" ("GameId");
+2023-09-10 09:16:07.439 +03:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_MultiplayerGames_PlayerOneId" ON "MultiplayerGames" ("PlayerOneId");
+2023-09-10 09:16:07.441 +03:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_MultiplayerGames_PlayerTwoId" ON "MultiplayerGames" ("PlayerTwoId");
+2023-09-10 09:16:07.443 +03:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_MultiplayerGames_WinnerPlayerId" ON "MultiplayerGames" ("WinnerPlayerId");
+2023-09-10 09:16:07.444 +03:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_Payouts_PlayerId" ON "Payouts" ("PlayerId");
+2023-09-10 09:16:07.630 +03:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "AspNetUsers" AS "a")
+2023-09-10 09:16:07.711 +03:30 [INF] Executed DbCommand (5ms) [Parameters=[@__role_0='?' (Size = 5)], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "AspNetRoles" AS "a"
+    WHERE "a"."Name" = @__role_0)
+2023-09-10 09:16:07.825 +03:30 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedName_0='?' (Size = 5)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."ConcurrencyStamp", "a"."Name", "a"."NormalizedName"
+FROM "AspNetRoles" AS "a"
+WHERE "a"."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2023-09-10 09:16:07.830 +03:30 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedName_0='?' (Size = 5)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."ConcurrencyStamp", "a"."Name", "a"."NormalizedName"
+FROM "AspNetRoles" AS "a"
+WHERE "a"."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2023-09-10 09:16:07.988 +03:30 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?', @p1='?' (Size = 5), @p2='?' (Size = 5)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "AspNetRoles" ("ConcurrencyStamp", "Name", "NormalizedName")
+VALUES (@p0, @p1, @p2)
+RETURNING "Id";
+2023-09-10 09:16:08.015 +03:30 [INF] Executed DbCommand (0ms) [Parameters=[@__role_0='?' (Size = 6)], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "AspNetRoles" AS "a"
+    WHERE "a"."Name" = @__role_0)
+2023-09-10 09:16:08.017 +03:30 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedName_0='?' (Size = 6)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."ConcurrencyStamp", "a"."Name", "a"."NormalizedName"
+FROM "AspNetRoles" AS "a"
+WHERE "a"."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2023-09-10 09:16:08.019 +03:30 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedName_0='?' (Size = 6)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."ConcurrencyStamp", "a"."Name", "a"."NormalizedName"
+FROM "AspNetRoles" AS "a"
+WHERE "a"."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2023-09-10 09:16:08.026 +03:30 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?', @p1='?' (Size = 6), @p2='?' (Size = 6)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "AspNetRoles" ("ConcurrencyStamp", "Name", "NormalizedName")
+VALUES (@p0, @p1, @p2)
+RETURNING "Id";
+2023-09-10 09:16:08.029 +03:30 [INF] Executed DbCommand (0ms) [Parameters=[@__role_0='?' (Size = 6)], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "AspNetRoles" AS "a"
+    WHERE "a"."Name" = @__role_0)
+2023-09-10 09:16:08.031 +03:30 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedName_0='?' (Size = 6)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."ConcurrencyStamp", "a"."Name", "a"."NormalizedName"
+FROM "AspNetRoles" AS "a"
+WHERE "a"."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2023-09-10 09:16:08.033 +03:30 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedName_0='?' (Size = 6)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."ConcurrencyStamp", "a"."Name", "a"."NormalizedName"
+FROM "AspNetRoles" AS "a"
+WHERE "a"."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2023-09-10 09:16:08.037 +03:30 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?', @p1='?' (Size = 6), @p2='?' (Size = 6)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "AspNetRoles" ("ConcurrencyStamp", "Name", "NormalizedName")
+VALUES (@p0, @p1, @p2)
+RETURNING "Id";
+2023-09-10 09:16:08.134 +03:30 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedUserName_0='?' (Size = 5)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."Avatar", "a"."City", "a"."Coins", "a"."ConcurrencyStamp", "a"."Credit", "a"."DeactivationTime", "a"."DebitCard", "a"."DeviceId", "a"."DisplayName", "a"."Email", "a"."EmailConfirmed", "a"."IsOnline", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."Name", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."PlayerId", "a"."PlayerId1", "a"."PlayerId2", "a"."Province", "a"."ReferralCode", "a"."ReferredById", "a"."Registered", "a"."Reports", "a"."SecurityStamp", "a"."Sex", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1
+2023-09-10 09:16:08.265 +03:30 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?', @p2='?', @p3='?' (DbType = Int32), @p4='?' (Size = 36), @p5='?' (DbType = Int32), @p6='?' (DbType = DateTime), @p7='?', @p8='?', @p9='?', @p10='?' (Size = 15), @p11='?' (DbType = Boolean), @p12='?' (DbType = Boolean), @p13='?' (DbType = Boolean), @p14='?' (DbType = DateTimeOffset), @p15='?', @p16='?' (Size = 15), @p17='?' (Size = 5), @p18='?' (Size = 84), @p19='?', @p20='?' (DbType = Boolean), @p21='?' (DbType = Int32), @p22='?' (DbType = Int32), @p23='?' (DbType = Int32), @p24='?', @p25='?', @p26='?' (DbType = Int32), @p27='?' (DbType = Boolean), @p28='?' (DbType = Int32), @p29='?' (Size = 32), @p30='?' (DbType = Int32), @p31='?' (DbType = Boolean), @p32='?' (Size = 5)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "AspNetUsers" ("AccessFailedCount", "Avatar", "City", "Coins", "ConcurrencyStamp", "Credit", "DeactivationTime", "DebitCard", "DeviceId", "DisplayName", "Email", "EmailConfirmed", "IsOnline", "LockoutEnabled", "LockoutEnd", "Name", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "PlayerId", "PlayerId1", "PlayerId2", "Province", "ReferralCode", "ReferredById", "Registered", "Reports", "SecurityStamp", "Sex", "TwoFactorEnabled", "UserName")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19, @p20, @p21, @p22, @p23, @p24, @p25, @p26, @p27, @p28, @p29, @p30, @p31, @p32)
+RETURNING "Id";
+2023-09-10 09:16:08.284 +03:30 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 5)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."ConcurrencyStamp", "a"."Name", "a"."NormalizedName"
+FROM "AspNetRoles" AS "a"
+WHERE "a"."NormalizedName" = @__normalizedRoleName_0
+LIMIT 2
+2023-09-10 09:16:08.305 +03:30 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."UserId", "a"."RoleId"
+FROM "AspNetUserRoles" AS "a"
+WHERE "a"."UserId" = @__p_0 AND "a"."RoleId" = @__p_1
+LIMIT 1
+2023-09-10 09:16:08.311 +03:30 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 5)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."ConcurrencyStamp", "a"."Name", "a"."NormalizedName"
+FROM "AspNetRoles" AS "a"
+WHERE "a"."NormalizedName" = @__normalizedRoleName_0
+LIMIT 2
+2023-09-10 09:16:08.332 +03:30 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedUserName_0='?' (Size = 5)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."Avatar", "a"."City", "a"."Coins", "a"."ConcurrencyStamp", "a"."Credit", "a"."DeactivationTime", "a"."DebitCard", "a"."DeviceId", "a"."DisplayName", "a"."Email", "a"."EmailConfirmed", "a"."IsOnline", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."Name", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."PlayerId", "a"."PlayerId1", "a"."PlayerId2", "a"."Province", "a"."ReferralCode", "a"."ReferredById", "a"."Registered", "a"."Reports", "a"."SecurityStamp", "a"."Sex", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1
+2023-09-10 09:16:08.353 +03:30 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "AspNetUserRoles" ("RoleId", "UserId")
+VALUES (@p0, @p1);
+2023-09-10 09:16:08.358 +03:30 [INF] Executed DbCommand (0ms) [Parameters=[@p33='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?', @p2='?', @p3='?' (DbType = Int32), @p4='?' (Size = 36), @p34='?' (Size = 36), @p5='?' (DbType = Int32), @p6='?' (DbType = DateTime), @p7='?', @p8='?', @p9='?', @p10='?' (Size = 15), @p11='?' (DbType = Boolean), @p12='?' (DbType = Boolean), @p13='?' (DbType = Boolean), @p14='?' (DbType = DateTimeOffset), @p15='?', @p16='?' (Size = 15), @p17='?' (Size = 5), @p18='?' (Size = 84), @p19='?', @p20='?' (DbType = Boolean), @p21='?' (DbType = Int32), @p22='?' (DbType = Int32), @p23='?' (DbType = Int32), @p24='?', @p25='?', @p26='?' (DbType = Int32), @p27='?' (DbType = Boolean), @p28='?' (DbType = Int32), @p29='?' (Size = 32), @p30='?' (DbType = Int32), @p31='?' (DbType = Boolean), @p32='?' (Size = 5)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "AspNetUsers" SET "AccessFailedCount" = @p0, "Avatar" = @p1, "City" = @p2, "Coins" = @p3, "ConcurrencyStamp" = @p4, "Credit" = @p5, "DeactivationTime" = @p6, "DebitCard" = @p7, "DeviceId" = @p8, "DisplayName" = @p9, "Email" = @p10, "EmailConfirmed" = @p11, "IsOnline" = @p12, "LockoutEnabled" = @p13, "LockoutEnd" = @p14, "Name" = @p15, "NormalizedEmail" = @p16, "NormalizedUserName" = @p17, "PasswordHash" = @p18, "PhoneNumber" = @p19, "PhoneNumberConfirmed" = @p20, "PlayerId" = @p21, "PlayerId1" = @p22, "PlayerId2" = @p23, "Province" = @p24, "ReferralCode" = @p25, "ReferredById" = @p26, "Registered" = @p27, "Reports" = @p28, "SecurityStamp" = @p29, "Sex" = @p30, "TwoFactorEnabled" = @p31, "UserName" = @p32
+WHERE "Id" = @p33 AND "ConcurrencyStamp" = @p34
+RETURNING 1;
+2023-09-10 09:16:08.508 +03:30 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 24), @p2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "AdminSettings" ("EachReferralCoin", "FirebaseKey", "MaxReferralCount")
+VALUES (@p0, @p1, @p2)
+RETURNING "Id";
+2023-09-10 09:16:08.513 +03:30 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 16), @p2='?' (DbType = Int32), @p3='?' (Size = 13), @p4='?' (Size = 22), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?', @p9='?' (Size = 43), @p10='?' (DbType = DateTime), @p11='?' (Size = 22), @p12='?', @p13='?' (DbType = Int32), @p14='?' (Size = 6)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Ads" ("AdType", "AdvertiserUrl", "Clicks", "CtaText", "Description", "ExpirationClicks", "ExpirationHours", "ExpirationViews", "Icon", "ImageUrl", "ShowingTime", "Title", "VideoUrl", "Views", "ZoneId")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14)
+RETURNING "Id";
+2023-09-10 09:16:08.516 +03:30 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32), @p2='?' (DbType = Int32), @p3='?' (DbType = Int32), @p4='?' (DbType = Boolean), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "AppSettings" ("BannerRefreshSeconds", "Chest1EntryCoin", "Chest2EntryCoin", "DeactivationReportsCount", "LtrSlide", "MinPayoutCredit", "PlayerActivationDays", "PlayerActivationPrice", "RandomRefresh")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8)
+RETURNING "Id";
+2023-09-10 09:16:08.518 +03:30 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Boolean), @p1='?' (DbType = Int32), @p2='?' (DbType = Int32), @p3='?' (DbType = Int32), @p4='?' (Size = 14), @p5='?' (DbType = Boolean), @p6='?' (DbType = Boolean), @p7='?' (DbType = Boolean), @p8='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Games" ("Enabled", "EntryCoin1", "EntryCoin2", "EntryCoin3", "Name", "SearchName", "SearchProvince", "TurnBased", "TurnTimeout")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8)
+RETURNING "Id";
+2023-09-10 09:16:08.522 +03:30 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Boolean), @p1='?' (DbType = Int32), @p2='?' (DbType = Int32), @p3='?' (DbType = Int32), @p4='?' (Size = 11), @p5='?' (DbType = Boolean), @p6='?' (DbType = Boolean), @p7='?' (DbType = Boolean), @p8='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Games" ("Enabled", "EntryCoin1", "EntryCoin2", "EntryCoin3", "Name", "SearchName", "SearchProvince", "TurnBased", "TurnTimeout")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8)
+RETURNING "Id";
+2023-09-10 09:16:08.523 +03:30 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Boolean), @p1='?' (DbType = Int32), @p2='?' (DbType = Int32), @p3='?' (DbType = Int32), @p4='?' (Size = 13), @p5='?' (DbType = Boolean), @p6='?' (DbType = Boolean), @p7='?' (DbType = Boolean), @p8='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Games" ("Enabled", "EntryCoin1", "EntryCoin2", "EntryCoin3", "Name", "SearchName", "SearchProvince", "TurnBased", "TurnTimeout")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8)
+RETURNING "Id";
+2023-09-10 09:16:08.525 +03:30 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (Size = 81), @p1='?' (Size = 11)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Inboxes" ("Text", "Title")
+VALUES (@p0, @p1)
+RETURNING "Id";
+2023-09-10 09:16:08.528 +03:30 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Boolean), @p2='?', @p3='?' (DbType = Boolean), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (Size = 6), @p7='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "ShopItems" ("Coins", "Consumable", "Description", "IsActive", "Order", "Price", "Sku", "Title")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7)
+RETURNING "Id";
+2023-09-10 09:16:08.530 +03:30 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Boolean), @p2='?', @p3='?' (DbType = Boolean), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (Size = 6), @p7='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "ShopItems" ("Coins", "Consumable", "Description", "IsActive", "Order", "Price", "Sku", "Title")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7)
+RETURNING "Id";
+2023-09-10 09:16:08.532 +03:30 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Boolean), @p2='?', @p3='?' (DbType = Boolean), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (Size = 6), @p7='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "ShopItems" ("Coins", "Consumable", "Description", "IsActive", "Order", "Price", "Sku", "Title")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7)
+RETURNING "Id";
+2023-09-10 09:16:08.534 +03:30 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Boolean), @p2='?', @p3='?' (DbType = Boolean), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (Size = 6), @p7='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "ShopItems" ("Coins", "Consumable", "Description", "IsActive", "Order", "Price", "Sku", "Title")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7)
+RETURNING "Id";
+2023-09-10 09:16:08.535 +03:30 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Boolean), @p2='?', @p3='?' (DbType = Boolean), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (Size = 6), @p7='?' (Size = 12)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "ShopItems" ("Coins", "Consumable", "Description", "IsActive", "Order", "Price", "Sku", "Title")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7)
+RETURNING "Id";
+2023-09-10 09:16:08.537 +03:30 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Statistics" ("OnlinePlayers", "PlayersCount")
+VALUES (@p0, @p1)
+RETURNING "Id";
+2023-09-10 09:16:08.626 +03:30 [INF] Now listening on: http://localhost:57679
+2023-09-10 09:16:08.628 +03:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-09-10 09:16:08.628 +03:30 [INF] Hosting environment: Development
+2023-09-10 09:16:08.629 +03:30 [INF] Content root path: C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Web\bin\Debug\net7.0\
+2023-09-10 09:16:09.729 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57679/_framework/blazor.webassembly.js - -
+2023-09-10 09:16:09.759 +03:30 [INF] The file /_framework/blazor.webassembly.js.gz was not modified
+2023-09-10 09:16:09.762 +03:30 [INF] HTTP GET /_framework/blazor.webassembly.js.gz responded 304 in 27.7973 ms
+2023-09-10 09:16:09.767 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57679/_framework/blazor.webassembly.js - - - 304 - text/javascript 39.5458ms
+2023-09-10 09:16:09.785 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57679/favicon.ico - -
+2023-09-10 09:16:09.787 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57679/_framework/blazor.boot.json - -
+2023-09-10 09:16:09.796 +03:30 [INF] Sending file. Request path: '/_framework/blazor.boot.json'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\blazor.boot.json'
+2023-09-10 09:16:09.797 +03:30 [INF] HTTP GET /_framework/blazor.boot.json responded 200 in 9.3948 ms
+2023-09-10 09:16:09.801 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57679/_framework/blazor.boot.json - - - 200 29475 application/json 13.6906ms
+2023-09-10 09:16:09.802 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57679/_framework/dotnet.7.0.9.ss8z9ylb8d.js - -
+2023-09-10 09:16:09.804 +03:30 [INF] The file /_framework/dotnet.7.0.9.ss8z9ylb8d.js.gz was not modified
+2023-09-10 09:16:09.805 +03:30 [INF] HTTP GET /_framework/dotnet.7.0.9.ss8z9ylb8d.js.gz responded 304 in 2.3922 ms
+2023-09-10 09:16:09.808 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57679/_framework/dotnet.7.0.9.ss8z9ylb8d.js - - - 304 - text/javascript 6.1585ms
+2023-09-10 09:16:09.970 +03:30 [INF] HTTP GET /favicon.ico responded 404 in 184.0585 ms
+2023-09-10 09:16:09.976 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57679/favicon.ico - - - 404 0 - 191.1084ms
+2023-09-10 09:16:10.570 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57679/api/Authorize/UserInfo - -
+2023-09-10 09:16:10.575 +03:30 [INF] Executing endpoint 'GameServer.Web.Api.AuthorizeController.UserInfo (GameServer.Web)'
+2023-09-10 09:16:10.585 +03:30 [INF] Route matched with {action = "UserInfo", controller = "Authorize", page = "", area = ""}. Executing controller action with signature GameServer.SharedKernel.UserInfo UserInfo() on controller GameServer.Web.Api.AuthorizeController (GameServer.Web).
+2023-09-10 09:16:10.607 +03:30 [INF] Executing ObjectResult, writing value of type 'GameServer.SharedKernel.UserInfo'.
+2023-09-10 09:16:10.710 +03:30 [INF] Executed action GameServer.Web.Api.AuthorizeController.UserInfo (GameServer.Web) in 120.8139ms
+2023-09-10 09:16:10.711 +03:30 [INF] Executed endpoint 'GameServer.Web.Api.AuthorizeController.UserInfo (GameServer.Web)'
+2023-09-10 09:16:10.713 +03:30 [INF] HTTP GET /api/Authorize/UserInfo responded 200 in 142.4762 ms
+2023-09-10 09:16:10.715 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57679/api/Authorize/UserInfo - - - 200 - application/json;+charset=utf-8 144.5251ms
+2023-09-10 09:16:19.295 +03:30 [INF] Request starting HTTP/1.1 POST http://localhost:57679/api/Authorize/Login application/json;+charset=utf-8 102
+2023-09-10 09:16:19.300 +03:30 [INF] CORS policy execution successful.
+2023-09-10 09:16:19.302 +03:30 [INF] Executing endpoint 'GameServer.Web.Api.AuthorizeController.Login (GameServer.Web)'
+2023-09-10 09:16:19.311 +03:30 [INF] Route matched with {action = "Login", controller = "Authorize", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(GameServer.SharedKernel.LoginParameters) on controller GameServer.Web.Api.AuthorizeController (GameServer.Web).
+2023-09-10 09:16:19.405 +03:30 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedUserName_0='?' (Size = 5)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."Avatar", "a"."City", "a"."Coins", "a"."ConcurrencyStamp", "a"."Credit", "a"."DeactivationTime", "a"."DebitCard", "a"."DeviceId", "a"."DisplayName", "a"."Email", "a"."EmailConfirmed", "a"."IsOnline", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."Name", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."PlayerId", "a"."PlayerId1", "a"."PlayerId2", "a"."Province", "a"."ReferralCode", "a"."ReferredById", "a"."Registered", "a"."Reports", "a"."SecurityStamp", "a"."Sex", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1
+2023-09-10 09:16:19.530 +03:30 [INF] Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a0"."Name"
+FROM "AspNetUserRoles" AS "a"
+INNER JOIN "AspNetRoles" AS "a0" ON "a"."RoleId" = "a0"."Id"
+WHERE "a"."UserId" = @__userId_0
+2023-09-10 09:16:19.550 +03:30 [INF] Executed DbCommand (0ms) [Parameters=[@__user_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."ClaimType", "a"."ClaimValue", "a"."UserId"
+FROM "AspNetUserClaims" AS "a"
+WHERE "a"."UserId" = @__user_Id_0
+2023-09-10 09:16:19.554 +03:30 [INF] Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a0"."Name"
+FROM "AspNetUserRoles" AS "a"
+INNER JOIN "AspNetRoles" AS "a0" ON "a"."RoleId" = "a0"."Id"
+WHERE "a"."UserId" = @__userId_0
+2023-09-10 09:16:19.556 +03:30 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedName_0='?' (Size = 5)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."Id", "a"."ConcurrencyStamp", "a"."Name", "a"."NormalizedName"
+FROM "AspNetRoles" AS "a"
+WHERE "a"."NormalizedName" = @__normalizedName_0
+LIMIT 1
+2023-09-10 09:16:19.563 +03:30 [INF] Executed DbCommand (0ms) [Parameters=[@__role_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "a"."ClaimType", "a"."ClaimValue"
+FROM "AspNetRoleClaims" AS "a"
+WHERE "a"."RoleId" = @__role_Id_0
+2023-09-10 09:16:19.571 +03:30 [INF] AuthenticationScheme: Identity.Application signed in.
+2023-09-10 09:16:19.573 +03:30 [INF] AuthenticationScheme: Cookies signed in.
+2023-09-10 09:16:19.577 +03:30 [INF] Executing StatusCodeResult, setting HTTP status code 200
+2023-09-10 09:16:19.577 +03:30 [INF] Executed action GameServer.Web.Api.AuthorizeController.Login (GameServer.Web) in 265.767ms
+2023-09-10 09:16:19.578 +03:30 [INF] Executed endpoint 'GameServer.Web.Api.AuthorizeController.Login (GameServer.Web)'
+2023-09-10 09:16:19.579 +03:30 [INF] HTTP POST /api/Authorize/Login responded 200 in 283.2635 ms
+2023-09-10 09:16:19.580 +03:30 [INF] Request finished HTTP/1.1 POST http://localhost:57679/api/Authorize/Login application/json;+charset=utf-8 102 - 200 0 - 285.0585ms
+2023-09-10 09:16:19.586 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57679/api/Authorize/UserInfo - -
+2023-09-10 09:16:19.591 +03:30 [INF] Executing endpoint 'GameServer.Web.Api.AuthorizeController.UserInfo (GameServer.Web)'
+2023-09-10 09:16:19.592 +03:30 [INF] Route matched with {action = "UserInfo", controller = "Authorize", page = "", area = ""}. Executing controller action with signature GameServer.SharedKernel.UserInfo UserInfo() on controller GameServer.Web.Api.AuthorizeController (GameServer.Web).
+2023-09-10 09:16:19.594 +03:30 [INF] Executing ObjectResult, writing value of type 'GameServer.SharedKernel.UserInfo'.
+2023-09-10 09:16:19.598 +03:30 [INF] Executed action GameServer.Web.Api.AuthorizeController.UserInfo (GameServer.Web) in 5.0358ms
+2023-09-10 09:16:19.599 +03:30 [INF] Executed endpoint 'GameServer.Web.Api.AuthorizeController.UserInfo (GameServer.Web)'
+2023-09-10 09:16:19.600 +03:30 [INF] HTTP GET /api/Authorize/UserInfo responded 200 in 14.0362 ms
+2023-09-10 09:16:19.602 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57679/api/Authorize/UserInfo - - - 200 - application/json;+charset=utf-8 16.1107ms
+2023-09-10 09:16:19.644 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57679/api/Statistics/List - -
+2023-09-10 09:16:19.673 +03:30 [INF] Executing endpoint 'GameServer.Web.Api.StatisticsController.List (GameServer.Web)'
+2023-09-10 09:16:19.676 +03:30 [INF] Route matched with {action = "List", controller = "Statistics", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] List() on controller GameServer.Web.Api.StatisticsController (GameServer.Web).
+2023-09-10 09:16:19.797 +03:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "s"."Id", "s"."OnlinePlayers", "s"."PlayersCount"
+FROM "Statistics" AS "s"
+2023-09-10 09:16:19.800 +03:30 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[GameServer.Core.StatisticsAggregate.Statistics, GameServer.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[GameServer.SharedKernel.ApiModels.StatisticsDTO, GameServer.SharedKernel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-09-10 09:16:19.817 +03:30 [INF] Executed action GameServer.Web.Api.StatisticsController.List (GameServer.Web) in 139.6619ms
+2023-09-10 09:16:19.818 +03:30 [INF] Executed endpoint 'GameServer.Web.Api.StatisticsController.List (GameServer.Web)'
+2023-09-10 09:16:19.818 +03:30 [INF] HTTP GET /api/Statistics/List responded 200 in 173.3179 ms
+2023-09-10 09:16:19.820 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57679/api/Statistics/List - - - 200 - application/json;+charset=utf-8 174.9910ms
+2023-09-10 09:16:32.636 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57679/swagger/index.html - -
+2023-09-10 09:16:32.718 +03:30 [INF] HTTP GET /swagger/index.html responded 200 in 80.9010 ms
+2023-09-10 09:16:32.720 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57679/swagger/index.html - - - 200 - text/html;charset=utf-8 83.6456ms
+2023-09-10 09:16:32.909 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57679/swagger/v1/swagger.json - -
+2023-09-10 09:16:33.050 +03:30 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 140.8535 ms
+2023-09-10 09:16:33.052 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57679/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 142.7643ms
+2023-09-10 09:16:45.057 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57679/api/MultiplayerGames/List - -
+2023-09-10 09:16:45.060 +03:30 [INF] Executing endpoint 'GameServer.Web.Api.MultiplayerGamesController.List (GameServer.Web)'
+2023-09-10 09:16:45.063 +03:30 [INF] Route matched with {action = "List", controller = "MultiplayerGames", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] List() on controller GameServer.Web.Api.MultiplayerGamesController (GameServer.Web).
+2023-09-10 09:16:45.075 +03:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "m"."Id", "m"."EndTime", "m"."EntryCoin", "m"."GameId", "m"."PlayerOneId", "m"."PlayerTwoId", "m"."StartTime", "m"."WinnerPlayerId"
+FROM "MultiplayerGames" AS "m"
+2023-09-10 09:16:45.078 +03:30 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[GameServer.Core.GameAggregate.MultiplayerGame, GameServer.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[GameServer.SharedKernel.ApiModels.MultiplayerGameDTO, GameServer.SharedKernel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-09-10 09:16:45.081 +03:30 [INF] Executed action GameServer.Web.Api.MultiplayerGamesController.List (GameServer.Web) in 15.8888ms
+2023-09-10 09:16:45.082 +03:30 [INF] Executed endpoint 'GameServer.Web.Api.MultiplayerGamesController.List (GameServer.Web)'
+2023-09-10 09:16:45.083 +03:30 [INF] HTTP GET /api/MultiplayerGames/List responded 200 in 24.7981 ms
+2023-09-10 09:16:45.084 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57679/api/MultiplayerGames/List - - - 200 - application/json;+charset=utf-8 26.7334ms
+2023-09-10 09:51:12.834 +03:30 [INF] Application is shutting down...
+2023-09-10 10:53:50.483 +03:30 [INF] User profile is available. Using 'C:\Users\Mahdi\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-09-10 10:53:51.449 +03:30 [WRN] There are multiple relationships between 'Player' and 'Player' without configured foreign key properties. This will cause Entity Framework to create shadow properties on 'Player' with names dependent on the discovery order. Consider configuring the foreign key properties using the [ForeignKey] attribute or in 'OnModelCreating'.
+2023-09-10 10:53:51.572 +03:30 [WRN] The foreign key property 'Player.PlayerId1' was created in shadow state because a conflicting property with the simple name 'PlayerId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2023-09-10 10:53:51.573 +03:30 [WRN] The foreign key property 'Player.PlayerId2' was created in shadow state because a conflicting property with the simple name 'PlayerId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2023-09-10 10:53:52.033 +03:30 [INF] Executed DbCommand (24ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;
+2023-09-10 10:53:52.273 +03:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "AspNetUsers" AS "a")
+2023-09-10 10:53:52.496 +03:30 [INF] Now listening on: http://localhost:57679
+2023-09-10 10:53:52.498 +03:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-09-10 10:53:52.499 +03:30 [INF] Hosting environment: Development
+2023-09-10 10:53:52.499 +03:30 [INF] Content root path: C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Web\bin\Debug\net7.0\
+2023-09-10 10:53:53.592 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57679/_framework/blazor.webassembly.js - -
+2023-09-10 10:53:53.641 +03:30 [INF] The file /_framework/blazor.webassembly.js.gz was not modified
+2023-09-10 10:53:53.645 +03:30 [INF] HTTP GET /_framework/blazor.webassembly.js.gz responded 304 in 43.6423 ms
+2023-09-10 10:53:53.653 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57679/_framework/blazor.webassembly.js - - - 304 - text/javascript 64.4331ms
+2023-09-10 10:53:53.668 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57679/_framework/blazor.boot.json - -
+2023-09-10 10:53:53.671 +03:30 [INF] The file /_framework/blazor.boot.json was not modified
+2023-09-10 10:53:53.672 +03:30 [INF] HTTP GET /_framework/blazor.boot.json responded 304 in 3.5742 ms
+2023-09-10 10:53:53.674 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57679/_framework/blazor.boot.json - - - 304 - application/json 6.1082ms
+2023-09-10 10:53:53.687 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57679/_framework/dotnet.7.0.9.ss8z9ylb8d.js - -
+2023-09-10 10:53:53.690 +03:30 [INF] The file /_framework/dotnet.7.0.9.ss8z9ylb8d.js.gz was not modified
+2023-09-10 10:53:53.693 +03:30 [INF] HTTP GET /_framework/dotnet.7.0.9.ss8z9ylb8d.js.gz responded 304 in 4.3706 ms
+2023-09-10 10:53:53.701 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57679/_framework/dotnet.7.0.9.ss8z9ylb8d.js - - - 304 - text/javascript 13.4811ms
+2023-09-10 10:53:54.365 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57679/api/Authorize/UserInfo - -
+2023-09-10 10:53:54.490 +03:30 [INF] Executing endpoint 'GameServer.Web.Api.AuthorizeController.UserInfo (GameServer.Web)'
+2023-09-10 10:53:54.515 +03:30 [INF] Route matched with {action = "UserInfo", controller = "Authorize", page = "", area = ""}. Executing controller action with signature GameServer.SharedKernel.UserInfo UserInfo() on controller GameServer.Web.Api.AuthorizeController (GameServer.Web).
+2023-09-10 10:53:54.573 +03:30 [INF] Executing ObjectResult, writing value of type 'GameServer.SharedKernel.UserInfo'.
+2023-09-10 10:53:54.745 +03:30 [INF] Executed action GameServer.Web.Api.AuthorizeController.UserInfo (GameServer.Web) in 224.1ms
+2023-09-10 10:53:54.747 +03:30 [INF] Executed endpoint 'GameServer.Web.Api.AuthorizeController.UserInfo (GameServer.Web)'
+2023-09-10 10:53:54.749 +03:30 [INF] HTTP GET /api/Authorize/UserInfo responded 200 in 383.8012 ms
+2023-09-10 10:53:54.754 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57679/api/Authorize/UserInfo - - - 200 - application/json;+charset=utf-8 389.3349ms
+2023-09-10 10:54:18.703 +03:30 [INF] Application is shutting down...

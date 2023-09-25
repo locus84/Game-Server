@@ -1,0 +1,741 @@
+2023-09-24 19:56:32.569 +03:30 [INF] User profile is available. Using 'C:\Users\Mahdi\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-09-24 19:56:34.331 +03:30 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;
+2023-09-24 19:56:34.562 +03:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "AspNetUsers" AS "a")
+2023-09-24 19:56:34.696 +03:30 [INF] Application started. Press Ctrl+C to shut down.
+2023-09-24 19:56:34.700 +03:30 [INF] Hosting environment: Development
+2023-09-24 19:56:34.700 +03:30 [INF] Content root path: C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Web\bin\Debug\net7.0\
+2023-09-24 19:56:34.715 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/blazor.webassembly.js - -
+2023-09-24 19:56:34.745 +03:30 [INF] The file /_framework/blazor.webassembly.js.gz was not modified
+2023-09-24 19:56:34.747 +03:30 [INF] HTTP GET /_framework/blazor.webassembly.js.gz responded 304 in 20.9697 ms
+2023-09-24 19:56:34.752 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/blazor.webassembly.js - - - 304 - text/javascript 38.6255ms
+2023-09-24 19:56:34.759 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/blazor.boot.json - -
+2023-09-24 19:56:34.765 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/favicon.ico - -
+2023-09-24 19:56:34.790 +03:30 [INF] Sending file. Request path: '/_framework/blazor.boot.json'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\blazor.boot.json'
+2023-09-24 19:56:34.792 +03:30 [INF] HTTP GET /_framework/blazor.boot.json responded 200 in 32.1642 ms
+2023-09-24 19:56:34.806 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/blazor.boot.json - - - 200 29471 application/json 45.8924ms
+2023-09-24 19:56:34.821 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/dotnet.7.0.11.p4q0rxxfh5.js - -
+2023-09-24 19:56:34.826 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/Microsoft.CSharp.dll - -
+2023-09-24 19:56:34.830 +03:30 [INF] Sending file. Request path: '/_framework/dotnet.7.0.11.p4q0rxxfh5.js.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\dotnet.7.0.11.p4q0rxxfh5.js.gz'
+2023-09-24 19:56:34.830 +03:30 [INF] HTTP GET /_framework/dotnet.7.0.11.p4q0rxxfh5.js.gz responded 200 in 9.0209 ms
+2023-09-24 19:56:34.838 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/Microsoft.VisualBasic.dll - -
+2023-09-24 19:56:34.856 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/Microsoft.VisualBasic.Core.dll - -
+2023-09-24 19:56:34.865 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/dotnet.7.0.11.p4q0rxxfh5.js - - - 200 68425 text/javascript 43.7257ms
+2023-09-24 19:56:34.870 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/Microsoft.Win32.Primitives.dll - -
+2023-09-24 19:56:34.870 +03:30 [INF] Sending file. Request path: '/_framework/Microsoft.VisualBasic.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\Microsoft.VisualBasic.dll.gz'
+2023-09-24 19:56:34.873 +03:30 [INF] HTTP GET /_framework/Microsoft.VisualBasic.dll.gz responded 200 in 35.0424 ms
+2023-09-24 19:56:34.873 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/Microsoft.VisualBasic.dll - - - 200 10448 application/octet-stream 35.8168ms
+2023-09-24 19:56:34.886 +03:30 [INF] Sending file. Request path: '/_framework/Microsoft.CSharp.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\Microsoft.CSharp.dll.gz'
+2023-09-24 19:56:34.886 +03:30 [INF] Sending file. Request path: '/_framework/Microsoft.Win32.Primitives.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\Microsoft.Win32.Primitives.dll.gz'
+2023-09-24 19:56:34.886 +03:30 [INF] HTTP GET /_framework/Microsoft.CSharp.dll.gz responded 200 in 60.6028 ms
+2023-09-24 19:56:34.886 +03:30 [INF] HTTP GET /_framework/Microsoft.Win32.Primitives.dll.gz responded 200 in 16.3714 ms
+2023-09-24 19:56:34.887 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/Microsoft.Win32.Primitives.dll - - - 200 9622 application/octet-stream 16.7928ms
+2023-09-24 19:56:34.887 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/Microsoft.Win32.Registry.dll - -
+2023-09-24 19:56:34.887 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.AppContext.dll - -
+2023-09-24 19:56:34.899 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/Microsoft.CSharp.dll - - - 200 139061 application/octet-stream 73.4432ms
+2023-09-24 19:56:34.899 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Buffers.dll - -
+2023-09-24 19:56:34.907 +03:30 [INF] Sending file. Request path: '/_framework/Microsoft.Win32.Registry.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\Microsoft.Win32.Registry.dll.gz'
+2023-09-24 19:56:34.907 +03:30 [INF] HTTP GET /_framework/Microsoft.Win32.Registry.dll.gz responded 200 in 20.5230 ms
+2023-09-24 19:56:34.911 +03:30 [INF] Sending file. Request path: '/_framework/Microsoft.VisualBasic.Core.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\Microsoft.VisualBasic.Core.dll.gz'
+2023-09-24 19:56:34.911 +03:30 [INF] Sending file. Request path: '/_framework/System.AppContext.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.AppContext.dll.gz'
+2023-09-24 19:56:34.912 +03:30 [INF] HTTP GET /_framework/Microsoft.VisualBasic.Core.dll.gz responded 200 in 55.8109 ms
+2023-09-24 19:56:34.912 +03:30 [INF] HTTP GET /_framework/System.AppContext.dll.gz responded 200 in 24.6402 ms
+2023-09-24 19:56:34.912 +03:30 [INF] Sending file. Request path: '/_framework/System.Buffers.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Buffers.dll.gz'
+2023-09-24 19:56:34.912 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.AppContext.dll - - - 200 9570 application/octet-stream 24.9125ms
+2023-09-24 19:56:34.912 +03:30 [INF] HTTP GET /_framework/System.Buffers.dll.gz responded 200 in 7.9147 ms
+2023-09-24 19:56:34.912 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Buffers.dll - - - 200 9467 application/octet-stream 12.5182ms
+2023-09-24 19:56:34.912 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/Microsoft.Win32.Registry.dll - - - 200 19375 application/octet-stream 23.8147ms
+2023-09-24 19:56:34.912 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Collections.Immutable.dll - -
+2023-09-24 19:56:34.916 +03:30 [INF] Sending file. Request path: '/_framework/System.Collections.Immutable.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Collections.Immutable.dll.gz'
+2023-09-24 19:56:34.916 +03:30 [INF] HTTP GET /_framework/System.Collections.Immutable.dll.gz responded 200 in 3.8103 ms
+2023-09-24 19:56:34.916 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/Microsoft.VisualBasic.Core.dll - - - 200 174509 application/octet-stream 60.4824ms
+2023-09-24 19:56:34.916 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Collections.Specialized.dll - -
+2023-09-24 19:56:34.916 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Collections.dll - -
+2023-09-24 19:56:34.917 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Collections.NonGeneric.dll - -
+2023-09-24 19:56:34.924 +03:30 [INF] Sending file. Request path: '/_framework/System.Collections.NonGeneric.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Collections.NonGeneric.dll.gz'
+2023-09-24 19:56:34.924 +03:30 [INF] HTTP GET /_framework/System.Collections.NonGeneric.dll.gz responded 200 in 7.3827 ms
+2023-09-24 19:56:34.924 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Collections.Immutable.dll - - - 200 82843 application/octet-stream 12.3082ms
+2023-09-24 19:56:34.925 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.ComponentModel.Annotations.dll - -
+2023-09-24 19:56:34.926 +03:30 [INF] Sending file. Request path: '/_framework/System.Collections.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Collections.dll.gz'
+2023-09-24 19:56:34.928 +03:30 [INF] HTTP GET /_framework/System.Collections.dll.gz responded 200 in 11.8564 ms
+2023-09-24 19:56:34.930 +03:30 [INF] Sending file. Request path: '/_framework/System.ComponentModel.Annotations.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.ComponentModel.Annotations.dll.gz'
+2023-09-24 19:56:34.930 +03:30 [INF] HTTP GET /_framework/System.ComponentModel.Annotations.dll.gz responded 200 in 5.2076 ms
+2023-09-24 19:56:34.930 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Collections.NonGeneric.dll - - - 200 22328 application/octet-stream 13.4609ms
+2023-09-24 19:56:34.930 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.ComponentModel.DataAnnotations.dll - -
+2023-09-24 19:56:34.938 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.ComponentModel.Annotations.dll - - - 200 40956 application/octet-stream 13.1165ms
+2023-09-24 19:56:34.938 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.ComponentModel.Primitives.dll - -
+2023-09-24 19:56:34.938 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Collections.dll - - - 200 46564 application/octet-stream 21.8966ms
+2023-09-24 19:56:34.946 +03:30 [INF] Sending file. Request path: '/_framework/System.Collections.Specialized.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Collections.Specialized.dll.gz'
+2023-09-24 19:56:34.946 +03:30 [INF] Sending file. Request path: '/_framework/System.ComponentModel.DataAnnotations.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.ComponentModel.DataAnnotations.dll.gz'
+2023-09-24 19:56:34.946 +03:30 [INF] HTTP GET /_framework/System.ComponentModel.DataAnnotations.dll.gz responded 200 in 15.2800 ms
+2023-09-24 19:56:34.946 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Collections.Concurrent.dll - -
+2023-09-24 19:56:34.946 +03:30 [INF] HTTP GET /_framework/System.Collections.Specialized.dll.gz responded 200 in 29.2060 ms
+2023-09-24 19:56:34.946 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.ComponentModel.EventBasedAsync.dll - -
+2023-09-24 19:56:34.946 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.ComponentModel.DataAnnotations.dll - - - 200 10135 application/octet-stream 15.6106ms
+2023-09-24 19:56:34.948 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Collections.Specialized.dll - - - 200 23887 application/octet-stream 31.8041ms
+2023-09-24 19:56:34.948 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.ComponentModel.dll - -
+2023-09-24 19:56:34.949 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.ComponentModel.TypeConverter.dll - -
+2023-09-24 19:56:34.960 +03:30 [INF] Sending file. Request path: '/_framework/System.ComponentModel.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.ComponentModel.dll.gz'
+2023-09-24 19:56:34.961 +03:30 [INF] Sending file. Request path: '/_framework/System.ComponentModel.Primitives.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.ComponentModel.Primitives.dll.gz'
+2023-09-24 19:56:34.963 +03:30 [INF] HTTP GET /_framework/System.ComponentModel.Primitives.dll.gz responded 200 in 22.4620 ms
+2023-09-24 19:56:34.963 +03:30 [INF] HTTP GET /_framework/System.ComponentModel.dll.gz responded 200 in 14.2919 ms
+2023-09-24 19:56:34.964 +03:30 [INF] Sending file. Request path: '/_framework/System.ComponentModel.EventBasedAsync.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.ComponentModel.EventBasedAsync.dll.gz'
+2023-09-24 19:56:34.964 +03:30 [INF] HTTP GET /_framework/System.ComponentModel.EventBasedAsync.dll.gz responded 200 in 17.6835 ms
+2023-09-24 19:56:34.964 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.ComponentModel.EventBasedAsync.dll - - - 200 14641 application/octet-stream 18.4840ms
+2023-09-24 19:56:34.964 +03:30 [INF] Sending file. Request path: '/_framework/System.Collections.Concurrent.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Collections.Concurrent.dll.gz'
+2023-09-24 19:56:34.965 +03:30 [INF] HTTP GET /_framework/System.Collections.Concurrent.dll.gz responded 200 in 18.9171 ms
+2023-09-24 19:56:34.965 +03:30 [INF] Sending file. Request path: '/_framework/System.ComponentModel.TypeConverter.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.ComponentModel.TypeConverter.dll.gz'
+2023-09-24 19:56:34.966 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.ComponentModel.dll - - - 200 10263 application/octet-stream 17.5488ms
+2023-09-24 19:56:34.966 +03:30 [INF] HTTP GET /_framework/System.ComponentModel.TypeConverter.dll.gz responded 200 in 16.2712 ms
+2023-09-24 19:56:34.966 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.ComponentModel.Primitives.dll - - - 200 21021 application/octet-stream 28.2701ms
+2023-09-24 19:56:34.968 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Configuration.dll - -
+2023-09-24 19:56:34.972 +03:30 [INF] Sending file. Request path: '/_framework/System.Configuration.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Configuration.dll.gz'
+2023-09-24 19:56:34.973 +03:30 [INF] HTTP GET /_framework/System.Configuration.dll.gz responded 200 in 3.8152 ms
+2023-09-24 19:56:34.973 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Data.Common.dll - -
+2023-09-24 19:56:34.973 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Configuration.dll - - - 200 10825 application/octet-stream 4.5596ms
+2023-09-24 19:56:34.973 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Console.dll - -
+2023-09-24 19:56:34.973 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Core.dll - -
+2023-09-24 19:56:34.974 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Data.DataSetExtensions.dll - -
+2023-09-24 19:56:34.977 +03:30 [INF] Sending file. Request path: '/_framework/System.Console.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Console.dll.gz'
+2023-09-24 19:56:34.977 +03:30 [INF] HTTP GET /_framework/System.Console.dll.gz responded 200 in 3.9442 ms
+2023-09-24 19:56:34.979 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.ComponentModel.TypeConverter.dll - - - 200 124327 application/octet-stream 29.8826ms
+2023-09-24 19:56:34.980 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Data.dll - -
+2023-09-24 19:56:34.981 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Collections.Concurrent.dll - - - 200 39456 application/octet-stream 35.2506ms
+2023-09-24 19:56:34.988 +03:30 [INF] Sending file. Request path: '/_framework/System.Data.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Data.dll.gz'
+2023-09-24 19:56:34.988 +03:30 [INF] HTTP GET /_framework/System.Data.dll.gz responded 200 in 8.2801 ms
+2023-09-24 19:56:34.988 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Data.dll - - - 200 12189 application/octet-stream 8.6164ms
+2023-09-24 19:56:34.989 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Console.dll - - - 200 27232 application/octet-stream 15.3834ms
+2023-09-24 19:56:34.989 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Diagnostics.Contracts.dll - -
+2023-09-24 19:56:34.996 +03:30 [INF] Sending file. Request path: '/_framework/System.Diagnostics.Contracts.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Diagnostics.Contracts.dll.gz'
+2023-09-24 19:56:34.996 +03:30 [INF] HTTP GET /_framework/System.Diagnostics.Contracts.dll.gz responded 200 in 7.1189 ms
+2023-09-24 19:56:34.997 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Diagnostics.Contracts.dll - - - 200 9792 application/octet-stream 7.4694ms
+2023-09-24 19:56:34.998 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Diagnostics.Debug.dll - -
+2023-09-24 19:56:35.004 +03:30 [INF] Sending file. Request path: '/_framework/System.Diagnostics.Debug.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Diagnostics.Debug.dll.gz'
+2023-09-24 19:56:35.005 +03:30 [INF] HTTP GET /_framework/System.Diagnostics.Debug.dll.gz responded 200 in 6.9948 ms
+2023-09-24 19:56:35.006 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Diagnostics.Debug.dll - - - 200 9756 application/octet-stream 7.5530ms
+2023-09-24 19:56:35.009 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Diagnostics.FileVersionInfo.dll - -
+2023-09-24 19:56:35.010 +03:30 [INF] Sending file. Request path: '/_framework/System.Data.DataSetExtensions.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Data.DataSetExtensions.dll.gz'
+2023-09-24 19:56:35.010 +03:30 [INF] HTTP GET /_framework/System.Data.DataSetExtensions.dll.gz responded 200 in 15.9177 ms
+2023-09-24 19:56:35.012 +03:30 [INF] Sending file. Request path: '/_framework/System.Diagnostics.FileVersionInfo.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Diagnostics.FileVersionInfo.dll.gz'
+2023-09-24 19:56:35.013 +03:30 [INF] HTTP GET /_framework/System.Diagnostics.FileVersionInfo.dll.gz responded 200 in 3.2259 ms
+2023-09-24 19:56:35.013 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Diagnostics.Process.dll - -
+2023-09-24 19:56:35.013 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Data.DataSetExtensions.dll - - - 200 9499 application/octet-stream 36.9348ms
+2023-09-24 19:56:35.013 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Diagnostics.FileVersionInfo.dll - - - 200 12369 application/octet-stream 4.1487ms
+2023-09-24 19:56:35.014 +03:30 [INF] Sending file. Request path: '/_framework/System.Core.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Core.dll.gz'
+2023-09-24 19:56:35.014 +03:30 [INF] Sending file. Request path: '/_framework/System.Data.Common.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Data.Common.dll.gz'
+2023-09-24 19:56:35.015 +03:30 [INF] HTTP GET /_framework/System.Core.dll.gz responded 200 in 41.0876 ms
+2023-09-24 19:56:35.015 +03:30 [INF] HTTP GET /_framework/System.Data.Common.dll.gz responded 200 in 41.6191 ms
+2023-09-24 19:56:35.015 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Core.dll - - - 200 12132 application/octet-stream 41.3449ms
+2023-09-24 19:56:34.999 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Diagnostics.DiagnosticSource.dll - -
+2023-09-24 19:56:35.015 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Diagnostics.StackTrace.dll - -
+2023-09-24 19:56:35.020 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Diagnostics.TextWriterTraceListener.dll - -
+2023-09-24 19:56:35.025 +03:30 [INF] Sending file. Request path: '/_framework/System.Diagnostics.Process.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Diagnostics.Process.dll.gz'
+2023-09-24 19:56:35.025 +03:30 [INF] Sending file. Request path: '/_framework/System.Diagnostics.StackTrace.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Diagnostics.StackTrace.dll.gz'
+2023-09-24 19:56:35.026 +03:30 [INF] HTTP GET /_framework/System.Diagnostics.Process.dll.gz responded 200 in 12.4243 ms
+2023-09-24 19:56:35.026 +03:30 [INF] HTTP GET /_framework/System.Diagnostics.StackTrace.dll.gz responded 200 in 9.6822 ms
+2023-09-24 19:56:35.026 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Diagnostics.StackTrace.dll - - - 200 15216 application/octet-stream 11.7104ms
+2023-09-24 19:56:35.027 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Diagnostics.Process.dll - - - 200 23237 application/octet-stream 13.5071ms
+2023-09-24 19:56:35.029 +03:30 [INF] Sending file. Request path: '/_framework/System.Diagnostics.DiagnosticSource.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Diagnostics.DiagnosticSource.dll.gz'
+2023-09-24 19:56:35.029 +03:30 [INF] HTTP GET /_framework/System.Diagnostics.DiagnosticSource.dll.gz responded 200 in 11.4065 ms
+2023-09-24 19:56:35.029 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Diagnostics.Tools.dll - -
+2023-09-24 19:56:35.029 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Diagnostics.TraceSource.dll - -
+2023-09-24 19:56:35.029 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Diagnostics.DiagnosticSource.dll - - - 200 67743 application/octet-stream 30.5242ms
+2023-09-24 19:56:35.034 +03:30 [INF] Sending file. Request path: '/_framework/System.Diagnostics.TextWriterTraceListener.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Diagnostics.TextWriterTraceListener.dll.gz'
+2023-09-24 19:56:35.035 +03:30 [INF] Sending file. Request path: '/_framework/System.Diagnostics.Tools.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Diagnostics.Tools.dll.gz'
+2023-09-24 19:56:35.035 +03:30 [INF] HTTP GET /_framework/System.Diagnostics.TextWriterTraceListener.dll.gz responded 200 in 11.5470 ms
+2023-09-24 19:56:35.035 +03:30 [INF] HTTP GET /_framework/System.Diagnostics.Tools.dll.gz responded 200 in 5.7680 ms
+2023-09-24 19:56:35.035 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Diagnostics.TextWriterTraceListener.dll - - - 200 17193 application/octet-stream 15.7639ms
+2023-09-24 19:56:35.035 +03:30 [INF] Sending file. Request path: '/_framework/System.Diagnostics.TraceSource.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Diagnostics.TraceSource.dll.gz'
+2023-09-24 19:56:35.035 +03:30 [INF] HTTP GET /_framework/System.Diagnostics.TraceSource.dll.gz responded 200 in 6.2642 ms
+2023-09-24 19:56:35.035 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Diagnostics.Tools.dll - - - 200 9692 application/octet-stream 6.6254ms
+2023-09-24 19:56:35.035 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Data.Common.dll - - - 200 381768 application/octet-stream 62.6582ms
+2023-09-24 19:56:35.036 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Diagnostics.Tracing.dll - -
+2023-09-24 19:56:35.036 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Drawing.Primitives.dll - -
+2023-09-24 19:56:35.037 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Diagnostics.TraceSource.dll - - - 200 26978 application/octet-stream 7.3718ms
+2023-09-24 19:56:35.045 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Drawing.dll - -
+2023-09-24 19:56:35.045 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Formats.Asn1.dll - -
+2023-09-24 19:56:35.048 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Dynamic.Runtime.dll - -
+2023-09-24 19:56:35.049 +03:30 [INF] Sending file. Request path: '/_framework/System.Drawing.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Drawing.dll.gz'
+2023-09-24 19:56:35.049 +03:30 [INF] HTTP GET /_framework/System.Drawing.dll.gz responded 200 in 3.8035 ms
+2023-09-24 19:56:35.049 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Drawing.dll - - - 200 11473 application/octet-stream 4.1890ms
+2023-09-24 19:56:35.050 +03:30 [INF] Sending file. Request path: '/_framework/System.Formats.Asn1.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Formats.Asn1.dll.gz'
+2023-09-24 19:56:35.051 +03:30 [INF] HTTP GET /_framework/System.Formats.Asn1.dll.gz responded 200 in 5.4796 ms
+2023-09-24 19:56:35.052 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Formats.Asn1.dll - - - 200 37533 application/octet-stream 6.3735ms
+2023-09-24 19:56:35.053 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Globalization.Calendars.dll - -
+2023-09-24 19:56:35.054 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Formats.Tar.dll - -
+2023-09-24 19:56:35.055 +03:30 [INF] Sending file. Request path: '/_framework/System.Dynamic.Runtime.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Dynamic.Runtime.dll.gz'
+2023-09-24 19:56:35.055 +03:30 [INF] HTTP GET /_framework/System.Dynamic.Runtime.dll.gz responded 200 in 6.2533 ms
+2023-09-24 19:56:35.059 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Dynamic.Runtime.dll - - - 200 9853 application/octet-stream 8.9846ms
+2023-09-24 19:56:35.061 +03:30 [INF] Sending file. Request path: '/_framework/System.Formats.Tar.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Formats.Tar.dll.gz'
+2023-09-24 19:56:35.061 +03:30 [INF] Sending file. Request path: '/_framework/System.Globalization.Calendars.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Globalization.Calendars.dll.gz'
+2023-09-24 19:56:35.061 +03:30 [INF] HTTP GET /_framework/System.Formats.Tar.dll.gz responded 200 in 6.3789 ms
+2023-09-24 19:56:35.062 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Globalization.Extensions.dll - -
+2023-09-24 19:56:35.062 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Formats.Tar.dll - - - 200 17729 application/octet-stream 9.8178ms
+2023-09-24 19:56:35.062 +03:30 [INF] HTTP GET /_framework/System.Globalization.Calendars.dll.gz responded 200 in 7.4468 ms
+2023-09-24 19:56:35.062 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Globalization.Calendars.dll - - - 200 9781 application/octet-stream 8.4706ms
+2023-09-24 19:56:35.065 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.IO.Compression.Brotli.dll - -
+2023-09-24 19:56:35.065 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Globalization.dll - -
+2023-09-24 19:56:35.070 +03:30 [INF] Sending file. Request path: '/_framework/System.Globalization.Extensions.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Globalization.Extensions.dll.gz'
+2023-09-24 19:56:35.068 +03:30 [INF] Sending file. Request path: '/_framework/System.Drawing.Primitives.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Drawing.Primitives.dll.gz'
+2023-09-24 19:56:35.071 +03:30 [INF] HTTP GET /_framework/System.Globalization.Extensions.dll.gz responded 200 in 8.7502 ms
+2023-09-24 19:56:35.071 +03:30 [INF] HTTP GET /_framework/System.Drawing.Primitives.dll.gz responded 200 in 34.7662 ms
+2023-09-24 19:56:35.071 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Globalization.Extensions.dll - - - 200 9585 application/octet-stream 9.6884ms
+2023-09-24 19:56:35.072 +03:30 [INF] Sending file. Request path: '/_framework/System.IO.Compression.Brotli.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.IO.Compression.Brotli.dll.gz'
+2023-09-24 19:56:35.072 +03:30 [INF] HTTP GET /_framework/System.IO.Compression.Brotli.dll.gz responded 200 in 6.6661 ms
+2023-09-24 19:56:35.072 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.IO.Compression.Brotli.dll - - - 200 14162 application/octet-stream 6.9858ms
+2023-09-24 19:56:35.072 +03:30 [INF] Sending file. Request path: '/_framework/System.Globalization.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Globalization.dll.gz'
+2023-09-24 19:56:35.072 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.IO.Compression.FileSystem.dll - -
+2023-09-24 19:56:35.072 +03:30 [INF] HTTP GET /_framework/System.Globalization.dll.gz responded 200 in 6.9767 ms
+2023-09-24 19:56:35.072 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Globalization.dll - - - 200 9745 application/octet-stream 7.2535ms
+2023-09-24 19:56:35.075 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Drawing.Primitives.dll - - - 200 30636 application/octet-stream 38.3110ms
+2023-09-24 19:56:35.075 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.IO.Compression.ZipFile.dll - -
+2023-09-24 19:56:35.077 +03:30 [INF] Sending file. Request path: '/_framework/System.IO.Compression.FileSystem.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.IO.Compression.FileSystem.dll.gz'
+2023-09-24 19:56:35.079 +03:30 [INF] HTTP GET /_framework/System.IO.Compression.FileSystem.dll.gz responded 200 in 6.2764 ms
+2023-09-24 19:56:35.079 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.IO.Compression.FileSystem.dll - - - 200 9533 application/octet-stream 6.7587ms
+2023-09-24 19:56:35.082 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.IO.Compression.dll - -
+2023-09-24 19:56:35.082 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.IO.FileSystem.DriveInfo.dll - -
+2023-09-24 19:56:35.083 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.IO.FileSystem.AccessControl.dll - -
+2023-09-24 19:56:35.090 +03:30 [INF] Sending file. Request path: '/_framework/System.IO.FileSystem.DriveInfo.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.IO.FileSystem.DriveInfo.dll.gz'
+2023-09-24 19:56:35.090 +03:30 [INF] Sending file. Request path: '/_framework/System.Diagnostics.Tracing.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Diagnostics.Tracing.dll.gz'
+2023-09-24 19:56:35.091 +03:30 [INF] HTTP GET /_framework/System.IO.FileSystem.DriveInfo.dll.gz responded 200 in 8.2278 ms
+2023-09-24 19:56:35.091 +03:30 [INF] HTTP GET /_framework/System.Diagnostics.Tracing.dll.gz responded 200 in 55.0027 ms
+2023-09-24 19:56:35.091 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.IO.FileSystem.DriveInfo.dll - - - 200 13099 application/octet-stream 8.4763ms
+2023-09-24 19:56:35.091 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Diagnostics.Tracing.dll - - - 200 9904 application/octet-stream 55.3489ms
+2023-09-24 19:56:35.091 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.IO.FileSystem.Primitives.dll - -
+2023-09-24 19:56:35.091 +03:30 [INF] Sending file. Request path: '/_framework/System.IO.Compression.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.IO.Compression.dll.gz'
+2023-09-24 19:56:35.091 +03:30 [INF] HTTP GET /_framework/System.IO.Compression.dll.gz responded 200 in 9.1686 ms
+2023-09-24 19:56:35.094 +03:30 [INF] Sending file. Request path: '/_framework/System.IO.FileSystem.AccessControl.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.IO.FileSystem.AccessControl.dll.gz'
+2023-09-24 19:56:35.094 +03:30 [INF] Sending file. Request path: '/_framework/System.IO.Compression.ZipFile.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.IO.Compression.ZipFile.dll.gz'
+2023-09-24 19:56:35.094 +03:30 [INF] HTTP GET /_framework/System.IO.Compression.ZipFile.dll.gz responded 200 in 15.5149 ms
+2023-09-24 19:56:35.094 +03:30 [INF] HTTP GET /_framework/System.IO.FileSystem.AccessControl.dll.gz responded 200 in 10.8928 ms
+2023-09-24 19:56:35.094 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.IO.FileSystem.AccessControl.dll - - - 200 15771 application/octet-stream 11.1891ms
+2023-09-24 19:56:35.094 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.IO.Compression.dll - - - 200 50103 application/octet-stream 11.7742ms
+2023-09-24 19:56:35.096 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.IO.Compression.ZipFile.dll - - - 200 18852 application/octet-stream 19.5783ms
+2023-09-24 19:56:35.096 +03:30 [INF] Sending file. Request path: '/_framework/System.IO.FileSystem.Primitives.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.IO.FileSystem.Primitives.dll.gz'
+2023-09-24 19:56:35.097 +03:30 [INF] HTTP GET /_framework/System.IO.FileSystem.Primitives.dll.gz responded 200 in 5.2190 ms
+2023-09-24 19:56:35.097 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.IO.FileSystem.Primitives.dll - - - 200 9593 application/octet-stream 5.5358ms
+2023-09-24 19:56:35.104 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.IO.FileSystem.Watcher.dll - -
+2023-09-24 19:56:35.104 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.IO.FileSystem.dll - -
+2023-09-24 19:56:35.115 +03:30 [INF] Sending file. Request path: '/_framework/System.IO.FileSystem.Watcher.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.IO.FileSystem.Watcher.dll.gz'
+2023-09-24 19:56:35.116 +03:30 [INF] HTTP GET /_framework/System.IO.FileSystem.Watcher.dll.gz responded 200 in 11.6194 ms
+2023-09-24 19:56:35.117 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.IO.MemoryMappedFiles.dll - -
+2023-09-24 19:56:35.117 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.IO.FileSystem.Watcher.dll - - - 200 15783 application/octet-stream 13.4972ms
+2023-09-24 19:56:35.117 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.IO.Pipes.AccessControl.dll - -
+2023-09-24 19:56:35.118 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.IO.IsolatedStorage.dll - -
+2023-09-24 19:56:35.118 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.IO.Pipes.dll - -
+2023-09-24 19:56:35.118 +03:30 [INF] Sending file. Request path: '/_framework/System.IO.FileSystem.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.IO.FileSystem.dll.gz'
+2023-09-24 19:56:35.121 +03:30 [INF] HTTP GET /_framework/System.IO.FileSystem.dll.gz responded 200 in 15.4788 ms
+2023-09-24 19:56:35.122 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.IO.FileSystem.dll - - - 200 9718 application/octet-stream 18.1432ms
+2023-09-24 19:56:35.123 +03:30 [INF] Sending file. Request path: '/_framework/System.IO.Pipes.AccessControl.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.IO.Pipes.AccessControl.dll.gz'
+2023-09-24 19:56:35.123 +03:30 [INF] HTTP GET /_framework/System.IO.Pipes.AccessControl.dll.gz responded 200 in 5.1217 ms
+2023-09-24 19:56:35.124 +03:30 [INF] Sending file. Request path: '/_framework/System.IO.IsolatedStorage.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.IO.IsolatedStorage.dll.gz'
+2023-09-24 19:56:35.124 +03:30 [INF] Sending file. Request path: '/_framework/System.IO.MemoryMappedFiles.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.IO.MemoryMappedFiles.dll.gz'
+2023-09-24 19:56:35.124 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.IO.Pipes.AccessControl.dll - - - 200 13001 application/octet-stream 6.2373ms
+2023-09-24 19:56:35.124 +03:30 [INF] HTTP GET /_framework/System.IO.MemoryMappedFiles.dll.gz responded 200 in 5.7650 ms
+2023-09-24 19:56:35.124 +03:30 [INF] HTTP GET /_framework/System.IO.IsolatedStorage.dll.gz responded 200 in 5.1687 ms
+2023-09-24 19:56:35.124 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.IO.IsolatedStorage.dll - - - 200 16511 application/octet-stream 6.5555ms
+2023-09-24 19:56:35.125 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.IO.MemoryMappedFiles.dll - - - 200 23914 application/octet-stream 7.9540ms
+2023-09-24 19:56:35.126 +03:30 [INF] Sending file. Request path: '/_framework/System.IO.Pipes.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.IO.Pipes.dll.gz'
+2023-09-24 19:56:35.126 +03:30 [INF] HTTP GET /_framework/System.IO.Pipes.dll.gz responded 200 in 7.0979 ms
+2023-09-24 19:56:35.127 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.IO.Pipes.dll - - - 200 18572 application/octet-stream 8.7048ms
+2023-09-24 19:56:35.136 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.IO.UnmanagedMemoryStream.dll - -
+2023-09-24 19:56:35.141 +03:30 [INF] HTTP GET /favicon.ico responded 404 in 375.4888 ms
+2023-09-24 19:56:35.153 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/favicon.ico - - - 404 - - 388.2159ms
+2023-09-24 19:56:35.153 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Linq.Parallel.dll - -
+2023-09-24 19:56:35.160 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Linq.Expressions.dll - -
+2023-09-24 19:56:35.160 +03:30 [INF] Sending file. Request path: '/_framework/System.IO.UnmanagedMemoryStream.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.IO.UnmanagedMemoryStream.dll.gz'
+2023-09-24 19:56:35.160 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.IO.dll - -
+2023-09-24 19:56:35.160 +03:30 [INF] HTTP GET /_framework/System.IO.UnmanagedMemoryStream.dll.gz responded 200 in 18.3366 ms
+2023-09-24 19:56:35.160 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Linq.Queryable.dll - -
+2023-09-24 19:56:35.161 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.IO.UnmanagedMemoryStream.dll - - - 200 9625 application/octet-stream 25.1522ms
+2023-09-24 19:56:35.160 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Linq.dll - -
+2023-09-24 19:56:35.164 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Memory.dll - -
+2023-09-24 19:56:35.170 +03:30 [INF] Sending file. Request path: '/_framework/System.Memory.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Memory.dll.gz'
+2023-09-24 19:56:35.170 +03:30 [INF] Sending file. Request path: '/_framework/System.Linq.Parallel.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Linq.Parallel.dll.gz'
+2023-09-24 19:56:35.170 +03:30 [INF] HTTP GET /_framework/System.Memory.dll.gz responded 200 in 6.0318 ms
+2023-09-24 19:56:35.170 +03:30 [INF] HTTP GET /_framework/System.Linq.Parallel.dll.gz responded 200 in 16.6385 ms
+2023-09-24 19:56:35.171 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Memory.dll - - - 200 27938 application/octet-stream 7.4085ms
+2023-09-24 19:56:35.172 +03:30 [INF] Sending file. Request path: '/_framework/System.Linq.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Linq.dll.gz'
+2023-09-24 19:56:35.172 +03:30 [INF] Sending file. Request path: '/_framework/System.IO.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.IO.dll.gz'
+2023-09-24 19:56:35.174 +03:30 [INF] HTTP GET /_framework/System.IO.dll.gz responded 200 in 14.1707 ms
+2023-09-24 19:56:35.175 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.IO.dll - - - 200 9679 application/octet-stream 14.7703ms
+2023-09-24 19:56:35.175 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Linq.Parallel.dll - - - 200 94611 application/octet-stream 21.8921ms
+2023-09-24 19:56:35.175 +03:30 [INF] HTTP GET /_framework/System.Linq.dll.gz responded 200 in 14.1302 ms
+2023-09-24 19:56:35.176 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Net.Http.dll - -
+2023-09-24 19:56:35.176 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Net.Http.Json.dll - -
+2023-09-24 19:56:35.177 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Linq.dll - - - 200 54931 application/octet-stream 16.8709ms
+2023-09-24 19:56:35.180 +03:30 [INF] Sending file. Request path: '/_framework/System.Net.Http.Json.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Net.Http.Json.dll.gz'
+2023-09-24 19:56:35.181 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Net.Mail.dll - -
+2023-09-24 19:56:35.181 +03:30 [INF] HTTP GET /_framework/System.Net.Http.Json.dll.gz responded 200 in 5.5211 ms
+2023-09-24 19:56:35.181 +03:30 [INF] Sending file. Request path: '/_framework/System.Linq.Queryable.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Linq.Queryable.dll.gz'
+2023-09-24 19:56:35.181 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Net.HttpListener.dll - -
+2023-09-24 19:56:35.183 +03:30 [INF] HTTP GET /_framework/System.Linq.Queryable.dll.gz responded 200 in 22.2458 ms
+2023-09-24 19:56:35.185 +03:30 [INF] Sending file. Request path: '/_framework/System.Net.Mail.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Net.Mail.dll.gz'
+2023-09-24 19:56:35.186 +03:30 [INF] HTTP GET /_framework/System.Net.Mail.dll.gz responded 200 in 4.2230 ms
+2023-09-24 19:56:35.187 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Net.NameResolution.dll - -
+2023-09-24 19:56:35.187 +03:30 [INF] Sending file. Request path: '/_framework/System.Net.HttpListener.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Net.HttpListener.dll.gz'
+2023-09-24 19:56:35.187 +03:30 [INF] HTTP GET /_framework/System.Net.HttpListener.dll.gz responded 200 in 4.2863 ms
+2023-09-24 19:56:35.190 +03:30 [INF] Sending file. Request path: '/_framework/System.Linq.Expressions.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Linq.Expressions.dll.gz'
+2023-09-24 19:56:35.190 +03:30 [INF] HTTP GET /_framework/System.Linq.Expressions.dll.gz responded 200 in 29.4178 ms
+2023-09-24 19:56:35.191 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Net.Primitives.dll - -
+2023-09-24 19:56:35.191 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Net.Ping.dll - -
+2023-09-24 19:56:35.191 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Net.Mail.dll - - - 200 48906 application/octet-stream 9.6359ms
+2023-09-24 19:56:35.195 +03:30 [INF] Sending file. Request path: '/_framework/System.Net.Ping.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Net.Ping.dll.gz'
+2023-09-24 19:56:35.195 +03:30 [INF] HTTP GET /_framework/System.Net.Ping.dll.gz responded 200 in 4.1323 ms
+2023-09-24 19:56:35.195 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Net.Ping.dll - - - 200 14436 application/octet-stream 4.4704ms
+2023-09-24 19:56:35.196 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Linq.Queryable.dll - - - 200 33329 application/octet-stream 35.1095ms
+2023-09-24 19:56:35.196 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Net.Http.Json.dll - - - 200 22172 application/octet-stream 20.5917ms
+2023-09-24 19:56:35.197 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Net.HttpListener.dll - - - 200 23662 application/octet-stream 15.3080ms
+2023-09-24 19:56:35.202 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Net.Quic.dll - -
+2023-09-24 19:56:35.203 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Linq.Expressions.dll - - - 200 219603 application/octet-stream 43.3164ms
+2023-09-24 19:56:35.203 +03:30 [INF] Sending file. Request path: '/_framework/System.Net.NameResolution.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Net.NameResolution.dll.gz'
+2023-09-24 19:56:35.203 +03:30 [INF] HTTP GET /_framework/System.Net.NameResolution.dll.gz responded 200 in 16.7181 ms
+2023-09-24 19:56:35.204 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Net.Requests.dll - -
+2023-09-24 19:56:35.204 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Net.NameResolution.dll - - - 200 13183 application/octet-stream 17.1177ms
+2023-09-24 19:56:35.204 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Net.NetworkInformation.dll - -
+2023-09-24 19:56:35.209 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Net.Security.dll - -
+2023-09-24 19:56:35.208 +03:30 [INF] Sending file. Request path: '/_framework/System.Net.Http.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Net.Http.dll.gz'
+2023-09-24 19:56:35.209 +03:30 [INF] HTTP GET /_framework/System.Net.Http.dll.gz responded 200 in 32.9530 ms
+2023-09-24 19:56:35.214 +03:30 [INF] Sending file. Request path: '/_framework/System.Net.Requests.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Net.Requests.dll.gz'
+2023-09-24 19:56:35.215 +03:30 [INF] HTTP GET /_framework/System.Net.Requests.dll.gz responded 200 in 11.1824 ms
+2023-09-24 19:56:35.215 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Net.ServicePoint.dll - -
+2023-09-24 19:56:35.216 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Net.Requests.dll - - - 200 25863 application/octet-stream 12.6846ms
+2023-09-24 19:56:35.217 +03:30 [INF] Sending file. Request path: '/_framework/System.Net.Primitives.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Net.Primitives.dll.gz'
+2023-09-24 19:56:35.218 +03:30 [INF] HTTP GET /_framework/System.Net.Primitives.dll.gz responded 200 in 26.6302 ms
+2023-09-24 19:56:35.218 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Net.Sockets.dll - -
+2023-09-24 19:56:35.223 +03:30 [INF] Sending file. Request path: '/_framework/System.Net.ServicePoint.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Net.ServicePoint.dll.gz'
+2023-09-24 19:56:35.223 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Net.Primitives.dll - - - 200 48683 application/octet-stream 32.2176ms
+2023-09-24 19:56:35.223 +03:30 [INF] HTTP GET /_framework/System.Net.ServicePoint.dll.gz responded 200 in 7.0091 ms
+2023-09-24 19:56:35.223 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Net.WebClient.dll - -
+2023-09-24 19:56:35.223 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Net.ServicePoint.dll - - - 200 14963 application/octet-stream 8.3049ms
+2023-09-24 19:56:35.222 +03:30 [INF] Sending file. Request path: '/_framework/System.Net.Security.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Net.Security.dll.gz'
+2023-09-24 19:56:35.224 +03:30 [INF] HTTP GET /_framework/System.Net.Security.dll.gz responded 200 in 14.9679 ms
+2023-09-24 19:56:35.224 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Net.Http.dll - - - 200 114268 application/octet-stream 39.1884ms
+2023-09-24 19:56:35.227 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Net.WebHeaderCollection.dll - -
+2023-09-24 19:56:35.230 +03:30 [INF] Sending file. Request path: '/_framework/System.Net.WebClient.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Net.WebClient.dll.gz'
+2023-09-24 19:56:35.230 +03:30 [INF] HTTP GET /_framework/System.Net.WebClient.dll.gz responded 200 in 6.4777 ms
+2023-09-24 19:56:35.234 +03:30 [INF] Sending file. Request path: '/_framework/System.Net.WebHeaderCollection.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Net.WebHeaderCollection.dll.gz'
+2023-09-24 19:56:35.235 +03:30 [INF] HTTP GET /_framework/System.Net.WebHeaderCollection.dll.gz responded 200 in 7.0227 ms
+2023-09-24 19:56:35.235 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Net.WebHeaderCollection.dll - - - 200 18288 application/octet-stream 7.6546ms
+2023-09-24 19:56:35.235 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Net.Security.dll - - - 200 32128 application/octet-stream 26.4060ms
+2023-09-24 19:56:35.235 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Net.WebClient.dll - - - 200 20889 application/octet-stream 11.8346ms
+2023-09-24 19:56:35.235 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Net.WebSockets.Client.dll - -
+2023-09-24 19:56:35.235 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Net.WebProxy.dll - -
+2023-09-24 19:56:35.236 +03:30 [INF] Sending file. Request path: '/_framework/System.Net.Quic.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Net.Quic.dll.gz'
+2023-09-24 19:56:35.236 +03:30 [INF] HTTP GET /_framework/System.Net.Quic.dll.gz responded 200 in 32.3941 ms
+2023-09-24 19:56:35.242 +03:30 [INF] Sending file. Request path: '/_framework/System.Net.WebProxy.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Net.WebProxy.dll.gz'
+2023-09-24 19:56:35.243 +03:30 [INF] Sending file. Request path: '/_framework/System.Net.WebSockets.Client.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Net.WebSockets.Client.dll.gz'
+2023-09-24 19:56:35.243 +03:30 [INF] HTTP GET /_framework/System.Net.WebProxy.dll.gz responded 200 in 7.9591 ms
+2023-09-24 19:56:35.243 +03:30 [INF] HTTP GET /_framework/System.Net.WebSockets.Client.dll.gz responded 200 in 8.0714 ms
+2023-09-24 19:56:35.244 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Net.WebProxy.dll - - - 200 13257 application/octet-stream 8.4612ms
+2023-09-24 19:56:35.249 +03:30 [INF] Sending file. Request path: '/_framework/System.Net.Sockets.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Net.Sockets.dll.gz'
+2023-09-24 19:56:35.250 +03:30 [INF] HTTP GET /_framework/System.Net.Sockets.dll.gz responded 200 in 31.2129 ms
+2023-09-24 19:56:35.250 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Net.WebSockets.dll - -
+2023-09-24 19:56:35.251 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Net.Quic.dll - - - 200 18474 application/octet-stream 47.9695ms
+2023-09-24 19:56:35.251 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Net.WebSockets.Client.dll - - - 200 23903 application/octet-stream 15.7194ms
+2023-09-24 19:56:35.251 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Numerics.Vectors.dll - -
+2023-09-24 19:56:35.252 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Numerics.dll - -
+2023-09-24 19:56:35.260 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Net.Sockets.dll - - - 200 30193 application/octet-stream 40.3136ms
+2023-09-24 19:56:35.263 +03:30 [INF] Sending file. Request path: '/_framework/System.Numerics.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Numerics.dll.gz'
+2023-09-24 19:56:35.263 +03:30 [INF] HTTP GET /_framework/System.Numerics.dll.gz responded 200 in 11.0966 ms
+2023-09-24 19:56:35.263 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.ObjectModel.dll - -
+2023-09-24 19:56:35.264 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Numerics.dll - - - 200 9587 application/octet-stream 11.6136ms
+2023-09-24 19:56:35.264 +03:30 [INF] Sending file. Request path: '/_framework/System.Numerics.Vectors.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Numerics.Vectors.dll.gz'
+2023-09-24 19:56:35.264 +03:30 [INF] HTTP GET /_framework/System.Numerics.Vectors.dll.gz responded 200 in 12.9364 ms
+2023-09-24 19:56:35.265 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Numerics.Vectors.dll - - - 200 9690 application/octet-stream 13.2691ms
+2023-09-24 19:56:35.266 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Net.dll - -
+2023-09-24 19:56:35.266 +03:30 [INF] Sending file. Request path: '/_framework/System.Net.WebSockets.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Net.WebSockets.dll.gz'
+2023-09-24 19:56:35.266 +03:30 [INF] HTTP GET /_framework/System.Net.WebSockets.dll.gz responded 200 in 16.4586 ms
+2023-09-24 19:56:35.267 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Private.Uri.dll - -
+2023-09-24 19:56:35.268 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Private.DataContractSerialization.dll - -
+2023-09-24 19:56:35.279 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Net.WebSockets.dll - - - 200 38720 application/octet-stream 28.4790ms
+2023-09-24 19:56:35.279 +03:30 [INF] Sending file. Request path: '/_framework/System.Private.Uri.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Private.Uri.dll.gz'
+2023-09-24 19:56:35.279 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Private.Xml.Linq.dll - -
+2023-09-24 19:56:35.279 +03:30 [INF] HTTP GET /_framework/System.Private.Uri.dll.gz responded 200 in 11.9674 ms
+2023-09-24 19:56:35.283 +03:30 [INF] Sending file. Request path: '/_framework/System.ObjectModel.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.ObjectModel.dll.gz'
+2023-09-24 19:56:35.283 +03:30 [INF] HTTP GET /_framework/System.ObjectModel.dll.gz responded 200 in 19.4139 ms
+2023-09-24 19:56:35.283 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Private.Uri.dll - - - 200 48239 application/octet-stream 16.3292ms
+2023-09-24 19:56:35.284 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Private.Xml.dll - -
+2023-09-24 19:56:35.287 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.ObjectModel.dll - - - 200 20352 application/octet-stream 24.6427ms
+2023-09-24 19:56:35.287 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Reflection.DispatchProxy.dll - -
+2023-09-24 19:56:35.287 +03:30 [INF] Sending file. Request path: '/_framework/System.Private.DataContractSerialization.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Private.DataContractSerialization.dll.gz'
+2023-09-24 19:56:35.288 +03:30 [INF] HTTP GET /_framework/System.Private.DataContractSerialization.dll.gz responded 200 in 19.9269 ms
+2023-09-24 19:56:35.292 +03:30 [INF] Sending file. Request path: '/_framework/System.Reflection.DispatchProxy.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Reflection.DispatchProxy.dll.gz'
+2023-09-24 19:56:35.292 +03:30 [INF] Sending file. Request path: '/_framework/System.Net.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Net.dll.gz'
+2023-09-24 19:56:35.292 +03:30 [INF] HTTP GET /_framework/System.Net.dll.gz responded 200 in 26.5320 ms
+2023-09-24 19:56:35.292 +03:30 [INF] HTTP GET /_framework/System.Reflection.DispatchProxy.dll.gz responded 200 in 4.7070 ms
+2023-09-24 19:56:35.292 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Net.dll - - - 200 10423 application/octet-stream 26.8491ms
+2023-09-24 19:56:35.293 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Reflection.DispatchProxy.dll - - - 200 19719 application/octet-stream 5.6733ms
+2023-09-24 19:56:35.293 +03:30 [INF] Sending file. Request path: '/_framework/System.Private.Xml.Linq.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Private.Xml.Linq.dll.gz'
+2023-09-24 19:56:35.294 +03:30 [INF] HTTP GET /_framework/System.Private.Xml.Linq.dll.gz responded 200 in 14.8151 ms
+2023-09-24 19:56:35.296 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Reflection.Emit.ILGeneration.dll - -
+2023-09-24 19:56:35.296 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Reflection.Emit.Lightweight.dll - -
+2023-09-24 19:56:35.296 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Private.Xml.Linq.dll - - - 200 66533 application/octet-stream 16.9554ms
+2023-09-24 19:56:35.297 +03:30 [INF] Sending file. Request path: '/_framework/System.Net.NetworkInformation.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Net.NetworkInformation.dll.gz'
+2023-09-24 19:56:35.297 +03:30 [INF] HTTP GET /_framework/System.Net.NetworkInformation.dll.gz responded 200 in 92.3537 ms
+2023-09-24 19:56:35.302 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Reflection.Emit.dll - -
+2023-09-24 19:56:35.302 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Net.NetworkInformation.dll - - - 200 19978 application/octet-stream 97.6819ms
+2023-09-24 19:56:35.302 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Reflection.Extensions.dll - -
+2023-09-24 19:56:35.302 +03:30 [INF] Sending file. Request path: '/_framework/System.Reflection.Emit.Lightweight.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Reflection.Emit.Lightweight.dll.gz'
+2023-09-24 19:56:35.303 +03:30 [INF] HTTP GET /_framework/System.Reflection.Emit.Lightweight.dll.gz responded 200 in 6.4420 ms
+2023-09-24 19:56:35.304 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Reflection.Emit.Lightweight.dll - - - 200 9610 application/octet-stream 7.1889ms
+2023-09-24 19:56:35.304 +03:30 [INF] Sending file. Request path: '/_framework/System.Reflection.Emit.ILGeneration.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Reflection.Emit.ILGeneration.dll.gz'
+2023-09-24 19:56:35.305 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Reflection.Metadata.dll - -
+2023-09-24 19:56:35.305 +03:30 [INF] HTTP GET /_framework/System.Reflection.Emit.ILGeneration.dll.gz responded 200 in 8.6654 ms
+2023-09-24 19:56:35.305 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Reflection.Emit.ILGeneration.dll - - - 200 9676 application/octet-stream 9.0479ms
+2023-09-24 19:56:35.318 +03:30 [INF] Sending file. Request path: '/_framework/System.Reflection.Emit.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Reflection.Emit.dll.gz'
+2023-09-24 19:56:35.318 +03:30 [INF] HTTP GET /_framework/System.Reflection.Emit.dll.gz responded 200 in 16.0909 ms
+2023-09-24 19:56:35.321 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Reflection.Emit.dll - - - 200 9724 application/octet-stream 18.9022ms
+2023-09-24 19:56:35.321 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Reflection.Primitives.dll - -
+2023-09-24 19:56:35.322 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Reflection.TypeExtensions.dll - -
+2023-09-24 19:56:35.324 +03:30 [INF] Sending file. Request path: '/_framework/System.Private.Xml.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Private.Xml.dll.gz'
+2023-09-24 19:56:35.325 +03:30 [INF] HTTP GET /_framework/System.Private.Xml.dll.gz responded 200 in 37.9228 ms
+2023-09-24 19:56:35.322 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Private.DataContractSerialization.dll - - - 200 306914 application/octet-stream 50.5073ms
+2023-09-24 19:56:35.325 +03:30 [INF] Sending file. Request path: '/_framework/System.Reflection.Primitives.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Reflection.Primitives.dll.gz'
+2023-09-24 19:56:35.326 +03:30 [INF] Sending file. Request path: '/_framework/System.Reflection.Extensions.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Reflection.Extensions.dll.gz'
+2023-09-24 19:56:35.326 +03:30 [INF] HTTP GET /_framework/System.Reflection.Primitives.dll.gz responded 200 in 4.5720 ms
+2023-09-24 19:56:35.326 +03:30 [INF] HTTP GET /_framework/System.Reflection.Extensions.dll.gz responded 200 in 23.7226 ms
+2023-09-24 19:56:35.327 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Reflection.Extensions.dll - - - 200 9590 application/octet-stream 24.3548ms
+2023-09-24 19:56:35.327 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Reflection.Primitives.dll - - - 200 9795 application/octet-stream 5.1942ms
+2023-09-24 19:56:35.327 +03:30 [INF] Sending file. Request path: '/_framework/System.Reflection.TypeExtensions.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Reflection.TypeExtensions.dll.gz'
+2023-09-24 19:56:35.327 +03:30 [INF] HTTP GET /_framework/System.Reflection.TypeExtensions.dll.gz responded 200 in 5.3998 ms
+2023-09-24 19:56:35.327 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Reflection.dll - -
+2023-09-24 19:56:35.327 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Reflection.TypeExtensions.dll - - - 200 13524 application/octet-stream 5.5748ms
+2023-09-24 19:56:35.328 +03:30 [INF] Sending file. Request path: '/_framework/System.Reflection.Metadata.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Reflection.Metadata.dll.gz'
+2023-09-24 19:56:35.331 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Resources.Writer.dll - -
+2023-09-24 19:56:35.331 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Resources.ResourceManager.dll - -
+2023-09-24 19:56:35.331 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Resources.Reader.dll - -
+2023-09-24 19:56:35.331 +03:30 [INF] HTTP GET /_framework/System.Reflection.Metadata.dll.gz responded 200 in 25.5209 ms
+2023-09-24 19:56:35.334 +03:30 [INF] Sending file. Request path: '/_framework/System.Resources.Writer.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Resources.Writer.dll.gz'
+2023-09-24 19:56:35.334 +03:30 [INF] Sending file. Request path: '/_framework/System.Resources.Reader.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Resources.Reader.dll.gz'
+2023-09-24 19:56:35.334 +03:30 [INF] Sending file. Request path: '/_framework/System.Reflection.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Reflection.dll.gz'
+2023-09-24 19:56:35.335 +03:30 [INF] HTTP GET /_framework/System.Resources.Reader.dll.gz responded 200 in 3.1276 ms
+2023-09-24 19:56:35.335 +03:30 [INF] HTTP GET /_framework/System.Reflection.dll.gz responded 200 in 7.6003 ms
+2023-09-24 19:56:35.335 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Reflection.dll - - - 200 9956 application/octet-stream 7.9404ms
+2023-09-24 19:56:35.334 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Reflection.Metadata.dll - - - 200 181975 application/octet-stream 27.7753ms
+2023-09-24 19:56:35.335 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Resources.Reader.dll - - - 200 9413 application/octet-stream 4.6076ms
+2023-09-24 19:56:35.336 +03:30 [INF] HTTP GET /_framework/System.Resources.Writer.dll.gz responded 200 in 5.1793 ms
+2023-09-24 19:56:35.336 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Resources.Writer.dll - - - 200 15384 application/octet-stream 5.5943ms
+2023-09-24 19:56:35.339 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Runtime.CompilerServices.Unsafe.dll - -
+2023-09-24 19:56:35.339 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Runtime.CompilerServices.VisualC.dll - -
+2023-09-24 19:56:35.344 +03:30 [INF] Sending file. Request path: '/_framework/System.Runtime.CompilerServices.VisualC.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Runtime.CompilerServices.VisualC.dll.gz'
+2023-09-24 19:56:35.344 +03:30 [INF] HTTP GET /_framework/System.Runtime.CompilerServices.VisualC.dll.gz responded 200 in 5.2292 ms
+2023-09-24 19:56:35.345 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Runtime.CompilerServices.VisualC.dll - - - 200 10597 application/octet-stream 6.0821ms
+2023-09-24 19:56:35.346 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Runtime.Extensions.dll - -
+2023-09-24 19:56:35.354 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Runtime.Handles.dll - -
+2023-09-24 19:56:35.359 +03:30 [INF] Sending file. Request path: '/_framework/System.Runtime.Handles.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Runtime.Handles.dll.gz'
+2023-09-24 19:56:35.359 +03:30 [INF] HTTP GET /_framework/System.Runtime.Handles.dll.gz responded 200 in 5.1006 ms
+2023-09-24 19:56:35.360 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Runtime.Handles.dll - - - 200 9603 application/octet-stream 5.4686ms
+2023-09-24 19:56:35.359 +03:30 [INF] Sending file. Request path: '/_framework/System.Resources.ResourceManager.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Resources.ResourceManager.dll.gz'
+2023-09-24 19:56:35.360 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Runtime.InteropServices.JavaScript.dll - -
+2023-09-24 19:56:35.361 +03:30 [INF] HTTP GET /_framework/System.Resources.ResourceManager.dll.gz responded 200 in 29.2299 ms
+2023-09-24 19:56:35.361 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Resources.ResourceManager.dll - - - 200 9752 application/octet-stream 30.3153ms
+2023-09-24 19:56:35.361 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Runtime.InteropServices.dll - -
+2023-09-24 19:56:35.381 +03:30 [INF] Sending file. Request path: '/_framework/System.Runtime.InteropServices.JavaScript.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Runtime.InteropServices.JavaScript.dll.gz'
+2023-09-24 19:56:35.381 +03:30 [INF] HTTP GET /_framework/System.Runtime.InteropServices.JavaScript.dll.gz responded 200 in 20.7944 ms
+2023-09-24 19:56:35.381 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Runtime.Intrinsics.dll - -
+2023-09-24 19:56:35.397 +03:30 [INF] Sending file. Request path: '/_framework/System.Runtime.Intrinsics.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Runtime.Intrinsics.dll.gz'
+2023-09-24 19:56:35.397 +03:30 [INF] HTTP GET /_framework/System.Runtime.Intrinsics.dll.gz responded 200 in 15.7150 ms
+2023-09-24 19:56:35.398 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Runtime.Intrinsics.dll - - - 200 9838 application/octet-stream 16.0580ms
+2023-09-24 19:56:35.398 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Runtime.Loader.dll - -
+2023-09-24 19:56:35.415 +03:30 [INF] Sending file. Request path: '/_framework/System.Runtime.Loader.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Runtime.Loader.dll.gz'
+2023-09-24 19:56:35.415 +03:30 [INF] HTTP GET /_framework/System.Runtime.Loader.dll.gz responded 200 in 17.5606 ms
+2023-09-24 19:56:35.416 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Runtime.Loader.dll - - - 200 9717 application/octet-stream 17.9458ms
+2023-09-24 19:56:35.416 +03:30 [INF] Sending file. Request path: '/_framework/System.Runtime.InteropServices.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Runtime.InteropServices.dll.gz'
+2023-09-24 19:56:35.416 +03:30 [INF] HTTP GET /_framework/System.Runtime.InteropServices.dll.gz responded 200 in 54.6628 ms
+2023-09-24 19:56:35.416 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Runtime.Numerics.dll - -
+2023-09-24 19:56:35.417 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Runtime.InteropServices.JavaScript.dll - - - 200 39256 application/octet-stream 56.6111ms
+2023-09-24 19:56:35.421 +03:30 [INF] Sending file. Request path: '/_framework/System.Runtime.Numerics.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Runtime.Numerics.dll.gz'
+2023-09-24 19:56:35.421 +03:30 [INF] HTTP GET /_framework/System.Runtime.Numerics.dll.gz responded 200 in 4.6651 ms
+2023-09-24 19:56:35.423 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Runtime.Serialization.Formatters.dll - -
+2023-09-24 19:56:35.427 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Runtime.Serialization.Json.dll - -
+2023-09-24 19:56:35.427 +03:30 [INF] Sending file. Request path: '/_framework/System.Runtime.Extensions.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Runtime.Extensions.dll.gz'
+2023-09-24 19:56:35.449 +03:30 [INF] HTTP GET /_framework/System.Runtime.Extensions.dll.gz responded 200 in 103.2514 ms
+2023-09-24 19:56:35.449 +03:30 [INF] Sending file. Request path: '/_framework/System.Runtime.Serialization.Formatters.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Runtime.Serialization.Formatters.dll.gz'
+2023-09-24 19:56:35.449 +03:30 [INF] Sending file. Request path: '/_framework/System.Runtime.CompilerServices.Unsafe.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Runtime.CompilerServices.Unsafe.dll.gz'
+2023-09-24 19:56:35.449 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Runtime.Extensions.dll - - - 200 10410 application/octet-stream 103.6610ms
+2023-09-24 19:56:35.449 +03:30 [INF] HTTP GET /_framework/System.Runtime.CompilerServices.Unsafe.dll.gz responded 200 in 109.8684 ms
+2023-09-24 19:56:35.449 +03:30 [INF] HTTP GET /_framework/System.Runtime.Serialization.Formatters.dll.gz responded 200 in 26.3285 ms
+2023-09-24 19:56:35.449 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Runtime.InteropServices.dll - - - 200 20218 application/octet-stream 65.5649ms
+2023-09-24 19:56:35.450 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Runtime.Numerics.dll - - - 200 52511 application/octet-stream 10.5330ms
+2023-09-24 19:56:35.450 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Runtime.Serialization.Primitives.dll - -
+2023-09-24 19:56:35.452 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Runtime.Serialization.Formatters.dll - - - 200 31374 application/octet-stream 29.8088ms
+2023-09-24 19:56:35.452 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Runtime.Serialization.dll - -
+2023-09-24 19:56:35.450 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Runtime.CompilerServices.Unsafe.dll - - - 200 9593 application/octet-stream 111.1726ms
+2023-09-24 19:56:35.453 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Runtime.dll - -
+2023-09-24 19:56:35.453 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Private.Xml.dll - - - 200 1068861 application/octet-stream 155.1133ms
+2023-09-24 19:56:35.450 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Runtime.Serialization.Xml.dll - -
+2023-09-24 19:56:35.453 +03:30 [INF] Sending file. Request path: '/_framework/System.Runtime.Serialization.Json.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Runtime.Serialization.Json.dll.gz'
+2023-09-24 19:56:35.454 +03:30 [INF] HTTP GET /_framework/System.Runtime.Serialization.Json.dll.gz responded 200 in 27.0798 ms
+2023-09-24 19:56:35.454 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Runtime.Serialization.Json.dll - - - 200 9645 application/octet-stream 27.5274ms
+2023-09-24 19:56:35.450 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Runtime.InteropServices.RuntimeInformation.dll - -
+2023-09-24 19:56:35.456 +03:30 [INF] Sending file. Request path: '/_framework/System.Runtime.Serialization.Primitives.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Runtime.Serialization.Primitives.dll.gz'
+2023-09-24 19:56:35.456 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Security.AccessControl.dll - -
+2023-09-24 19:56:35.456 +03:30 [INF] HTTP GET /_framework/System.Runtime.Serialization.Primitives.dll.gz responded 200 in 3.7150 ms
+2023-09-24 19:56:35.456 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Runtime.Serialization.Primitives.dll - - - 200 12976 application/octet-stream 20.8497ms
+2023-09-24 19:56:35.461 +03:30 [INF] Sending file. Request path: '/_framework/System.Runtime.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Runtime.dll.gz'
+2023-09-24 19:56:35.462 +03:30 [INF] HTTP GET /_framework/System.Runtime.dll.gz responded 200 in 8.8246 ms
+2023-09-24 19:56:35.463 +03:30 [INF] Sending file. Request path: '/_framework/System.Runtime.Serialization.Xml.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Runtime.Serialization.Xml.dll.gz'
+2023-09-24 19:56:35.463 +03:30 [INF] HTTP GET /_framework/System.Runtime.Serialization.Xml.dll.gz responded 200 in 8.8487 ms
+2023-09-24 19:56:35.463 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Runtime.dll - - - 200 17773 application/octet-stream 10.0230ms
+2023-09-24 19:56:35.463 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Runtime.Serialization.Xml.dll - - - 200 9974 application/octet-stream 13.1424ms
+2023-09-24 19:56:35.463 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Security.Claims.dll - -
+2023-09-24 19:56:35.463 +03:30 [INF] Sending file. Request path: '/_framework/System.Runtime.InteropServices.RuntimeInformation.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Runtime.InteropServices.RuntimeInformation.dll.gz'
+2023-09-24 19:56:35.464 +03:30 [INF] HTTP GET /_framework/System.Runtime.InteropServices.RuntimeInformation.dll.gz responded 200 in 8.7074 ms
+2023-09-24 19:56:35.464 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Runtime.InteropServices.RuntimeInformation.dll - - - 200 9463 application/octet-stream 13.8153ms
+2023-09-24 19:56:35.467 +03:30 [INF] Sending file. Request path: '/_framework/System.Security.Claims.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Security.Claims.dll.gz'
+2023-09-24 19:56:35.467 +03:30 [INF] HTTP GET /_framework/System.Security.Claims.dll.gz responded 200 in 3.6503 ms
+2023-09-24 19:56:35.467 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Security.Cryptography.Cng.dll - -
+2023-09-24 19:56:35.468 +03:30 [INF] Sending file. Request path: '/_framework/System.Runtime.Serialization.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Runtime.Serialization.dll.gz'
+2023-09-24 19:56:35.468 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Security.Cryptography.Algorithms.dll - -
+2023-09-24 19:56:35.468 +03:30 [INF] HTTP GET /_framework/System.Runtime.Serialization.dll.gz responded 200 in 14.7980 ms
+2023-09-24 19:56:35.470 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Security.Claims.dll - - - 200 22991 application/octet-stream 7.0174ms
+2023-09-24 19:56:35.471 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Security.Cryptography.Encoding.dll - -
+2023-09-24 19:56:35.472 +03:30 [INF] Sending file. Request path: '/_framework/System.Security.Cryptography.Cng.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Security.Cryptography.Cng.dll.gz'
+2023-09-24 19:56:35.474 +03:30 [INF] HTTP GET /_framework/System.Security.Cryptography.Cng.dll.gz responded 200 in 6.5206 ms
+2023-09-24 19:56:35.474 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Security.Cryptography.Csp.dll - -
+2023-09-24 19:56:35.474 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Security.Cryptography.Cng.dll - - - 200 9925 application/octet-stream 7.0401ms
+2023-09-24 19:56:35.475 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Security.Cryptography.OpenSsl.dll - -
+2023-09-24 19:56:35.475 +03:30 [INF] Sending file. Request path: '/_framework/System.Security.Cryptography.Encoding.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Security.Cryptography.Encoding.dll.gz'
+2023-09-24 19:56:35.477 +03:30 [INF] HTTP GET /_framework/System.Security.Cryptography.Encoding.dll.gz responded 200 in 4.5973 ms
+2023-09-24 19:56:35.479 +03:30 [INF] Sending file. Request path: '/_framework/System.Security.AccessControl.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Security.AccessControl.dll.gz'
+2023-09-24 19:56:35.478 +03:30 [INF] Sending file. Request path: '/_framework/System.Security.Cryptography.Csp.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Security.Cryptography.Csp.dll.gz'
+2023-09-24 19:56:35.480 +03:30 [INF] HTTP GET /_framework/System.Security.AccessControl.dll.gz responded 200 in 23.4863 ms
+2023-09-24 19:56:35.480 +03:30 [INF] HTTP GET /_framework/System.Security.Cryptography.Csp.dll.gz responded 200 in 5.4992 ms
+2023-09-24 19:56:35.480 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Security.Cryptography.Encoding.dll - - - 200 9615 application/octet-stream 9.3013ms
+2023-09-24 19:56:35.480 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Security.Cryptography.Csp.dll - - - 200 9850 application/octet-stream 8.3701ms
+2023-09-24 19:56:35.480 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Security.Cryptography.Primitives.dll - -
+2023-09-24 19:56:35.468 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Runtime.Serialization.dll - - - 200 10088 application/octet-stream 15.6639ms
+2023-09-24 19:56:35.481 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Security.AccessControl.dll - - - 200 24038 application/octet-stream 24.5814ms
+2023-09-24 19:56:35.481 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Security.Cryptography.X509Certificates.dll - -
+2023-09-24 19:56:35.486 +03:30 [INF] Sending file. Request path: '/_framework/System.Security.Cryptography.X509Certificates.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Security.Cryptography.X509Certificates.dll.gz'
+2023-09-24 19:56:35.486 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Security.Principal.Windows.dll - -
+2023-09-24 19:56:35.486 +03:30 [INF] HTTP GET /_framework/System.Security.Cryptography.X509Certificates.dll.gz responded 200 in 5.1386 ms
+2023-09-24 19:56:35.486 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Security.Cryptography.dll - -
+2023-09-24 19:56:35.487 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Security.Cryptography.X509Certificates.dll - - - 200 10027 application/octet-stream 5.9147ms
+2023-09-24 19:56:35.487 +03:30 [INF] Sending file. Request path: '/_framework/System.Security.Cryptography.Primitives.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Security.Cryptography.Primitives.dll.gz'
+2023-09-24 19:56:35.488 +03:30 [INF] HTTP GET /_framework/System.Security.Cryptography.Primitives.dll.gz responded 200 in 7.4429 ms
+2023-09-24 19:56:35.488 +03:30 [INF] Sending file. Request path: '/_framework/System.Security.Cryptography.OpenSsl.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Security.Cryptography.OpenSsl.dll.gz'
+2023-09-24 19:56:35.488 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Security.Cryptography.Primitives.dll - - - 200 9781 application/octet-stream 8.3541ms
+2023-09-24 19:56:35.496 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Security.SecureString.dll - -
+2023-09-24 19:56:35.494 +03:30 [INF] Sending file. Request path: '/_framework/System.Security.Cryptography.Algorithms.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Security.Cryptography.Algorithms.dll.gz'
+2023-09-24 19:56:35.498 +03:30 [INF] Sending file. Request path: '/_framework/System.Security.Cryptography.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Security.Cryptography.dll.gz'
+2023-09-24 19:56:35.498 +03:30 [INF] HTTP GET /_framework/System.Security.Cryptography.OpenSsl.dll.gz responded 200 in 13.4179 ms
+2023-09-24 19:56:35.498 +03:30 [INF] HTTP GET /_framework/System.Security.Cryptography.Algorithms.dll.gz responded 200 in 30.3867 ms
+2023-09-24 19:56:35.499 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Security.Cryptography.Algorithms.dll - - - 200 10133 application/octet-stream 30.7035ms
+2023-09-24 19:56:35.499 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Security.Cryptography.OpenSsl.dll - - - 200 9696 application/octet-stream 23.7369ms
+2023-09-24 19:56:35.498 +03:30 [INF] HTTP GET /_framework/System.Security.Cryptography.dll.gz responded 200 in 11.7755 ms
+2023-09-24 19:56:35.500 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.ServiceModel.Web.dll - -
+2023-09-24 19:56:35.500 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Security.dll - -
+2023-09-24 19:56:35.500 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Security.Principal.dll - -
+2023-09-24 19:56:35.502 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Security.Cryptography.dll - - - 200 176632 application/octet-stream 15.7144ms
+2023-09-24 19:56:35.502 +03:30 [INF] Sending file. Request path: '/_framework/System.Security.Principal.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Security.Principal.dll.gz'
+2023-09-24 19:56:35.502 +03:30 [INF] HTTP GET /_framework/System.Security.Principal.dll.gz responded 200 in 2.4501 ms
+2023-09-24 19:56:35.503 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Security.Principal.dll - - - 200 9530 application/octet-stream 2.6923ms
+2023-09-24 19:56:35.504 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.ServiceProcess.dll - -
+2023-09-24 19:56:35.506 +03:30 [INF] Sending file. Request path: '/_framework/System.Security.Principal.Windows.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Security.Principal.Windows.dll.gz'
+2023-09-24 19:56:35.507 +03:30 [INF] HTTP GET /_framework/System.Security.Principal.Windows.dll.gz responded 200 in 20.1351 ms
+2023-09-24 19:56:35.507 +03:30 [INF] Sending file. Request path: '/_framework/System.Security.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Security.dll.gz'
+2023-09-24 19:56:35.507 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Security.Principal.Windows.dll - - - 200 18271 application/octet-stream 20.9503ms
+2023-09-24 19:56:35.507 +03:30 [INF] Sending file. Request path: '/_framework/System.ServiceModel.Web.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.ServiceModel.Web.dll.gz'
+2023-09-24 19:56:35.507 +03:30 [INF] HTTP GET /_framework/System.ServiceModel.Web.dll.gz responded 200 in 7.5810 ms
+2023-09-24 19:56:35.507 +03:30 [INF] HTTP GET /_framework/System.Security.dll.gz responded 200 in 7.1314 ms
+2023-09-24 19:56:35.507 +03:30 [INF] Sending file. Request path: '/_framework/System.Security.SecureString.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Security.SecureString.dll.gz'
+2023-09-24 19:56:35.508 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.ServiceModel.Web.dll - - - 200 10199 application/octet-stream 8.0124ms
+2023-09-24 19:56:35.508 +03:30 [INF] HTTP GET /_framework/System.Security.SecureString.dll.gz responded 200 in 9.2881 ms
+2023-09-24 19:56:35.508 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Security.dll - - - 200 10629 application/octet-stream 7.8823ms
+2023-09-24 19:56:35.508 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Security.SecureString.dll - - - 200 9618 application/octet-stream 11.5325ms
+2023-09-24 19:56:35.508 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Text.Encoding.CodePages.dll - -
+2023-09-24 19:56:35.514 +03:30 [INF] Sending file. Request path: '/_framework/System.ServiceProcess.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.ServiceProcess.dll.gz'
+2023-09-24 19:56:35.509 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Text.Encoding.Extensions.dll - -
+2023-09-24 19:56:35.514 +03:30 [INF] HTTP GET /_framework/System.ServiceProcess.dll.gz responded 200 in 10.0328 ms
+2023-09-24 19:56:35.516 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Text.Encoding.dll - -
+2023-09-24 19:56:35.516 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.ServiceProcess.dll - - - 200 9938 application/octet-stream 12.3342ms
+2023-09-24 19:56:35.516 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Text.Encodings.Web.dll - -
+2023-09-24 19:56:35.517 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Text.Json.dll - -
+2023-09-24 19:56:35.522 +03:30 [INF] Sending file. Request path: '/_framework/System.Text.Encoding.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Text.Encoding.dll.gz'
+2023-09-24 19:56:35.522 +03:30 [INF] HTTP GET /_framework/System.Text.Encoding.dll.gz responded 200 in 6.4790 ms
+2023-09-24 19:56:35.523 +03:30 [INF] Sending file. Request path: '/_framework/System.Text.Encoding.Extensions.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Text.Encoding.Extensions.dll.gz'
+2023-09-24 19:56:35.523 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Text.Encoding.dll - - - 200 9699 application/octet-stream 6.9320ms
+2023-09-24 19:56:35.523 +03:30 [INF] HTTP GET /_framework/System.Text.Encoding.Extensions.dll.gz responded 200 in 7.9018 ms
+2023-09-24 19:56:35.523 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Text.RegularExpressions.dll - -
+2023-09-24 19:56:35.523 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Text.Encoding.Extensions.dll - - - 200 9654 application/octet-stream 13.6554ms
+2023-09-24 19:56:35.524 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Threading.Channels.dll - -
+2023-09-24 19:56:35.528 +03:30 [INF] Sending file. Request path: '/_framework/System.Threading.Channels.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Threading.Channels.dll.gz'
+2023-09-24 19:56:35.528 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Threading.Overlapped.dll - -
+2023-09-24 19:56:35.528 +03:30 [INF] HTTP GET /_framework/System.Threading.Channels.dll.gz responded 200 in 3.8227 ms
+2023-09-24 19:56:35.530 +03:30 [INF] Sending file. Request path: '/_framework/System.Text.RegularExpressions.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Text.RegularExpressions.dll.gz'
+2023-09-24 19:56:35.530 +03:30 [INF] HTTP GET /_framework/System.Text.RegularExpressions.dll.gz responded 200 in 7.3559 ms
+2023-09-24 19:56:35.531 +03:30 [INF] Sending file. Request path: '/_framework/System.Threading.Overlapped.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Threading.Overlapped.dll.gz'
+2023-09-24 19:56:35.531 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Threading.Channels.dll - - - 200 26479 application/octet-stream 7.8011ms
+2023-09-24 19:56:35.532 +03:30 [INF] HTTP GET /_framework/System.Threading.Overlapped.dll.gz responded 200 in 3.7066 ms
+2023-09-24 19:56:35.533 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Threading.Overlapped.dll - - - 200 9728 application/octet-stream 4.9958ms
+2023-09-24 19:56:35.535 +03:30 [INF] Sending file. Request path: '/_framework/System.Text.Encodings.Web.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Text.Encodings.Web.dll.gz'
+2023-09-24 19:56:35.535 +03:30 [INF] HTTP GET /_framework/System.Text.Encodings.Web.dll.gz responded 200 in 18.9794 ms
+2023-09-24 19:56:35.536 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Text.RegularExpressions.dll - - - 200 153524 application/octet-stream 12.2465ms
+2023-09-24 19:56:35.536 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Threading.Tasks.Dataflow.dll - -
+2023-09-24 19:56:35.537 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Threading.Tasks.Extensions.dll - -
+2023-09-24 19:56:35.537 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Threading.Tasks.Parallel.dll - -
+2023-09-24 19:56:35.544 +03:30 [INF] Sending file. Request path: '/_framework/System.Threading.Tasks.Dataflow.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Threading.Tasks.Dataflow.dll.gz'
+2023-09-24 19:56:35.544 +03:30 [INF] Sending file. Request path: '/_framework/System.Text.Json.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Text.Json.dll.gz'
+2023-09-24 19:56:35.544 +03:30 [INF] HTTP GET /_framework/System.Threading.Tasks.Dataflow.dll.gz responded 200 in 7.2507 ms
+2023-09-24 19:56:35.544 +03:30 [INF] HTTP GET /_framework/System.Text.Json.dll.gz responded 200 in 27.0453 ms
+2023-09-24 19:56:35.544 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Text.Encodings.Web.dll - - - 200 31278 application/octet-stream 28.0035ms
+2023-09-24 19:56:35.544 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Threading.Tasks.dll - -
+2023-09-24 19:56:35.545 +03:30 [INF] Sending file. Request path: '/_framework/System.Text.Encoding.CodePages.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Text.Encoding.CodePages.dll.gz'
+2023-09-24 19:56:35.545 +03:30 [INF] HTTP GET /_framework/System.Text.Encoding.CodePages.dll.gz responded 200 in 36.4813 ms
+2023-09-24 19:56:35.545 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Threading.Tasks.Dataflow.dll - - - 200 81574 application/octet-stream 9.0848ms
+2023-09-24 19:56:35.551 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Text.Json.dll - - - 200 196057 application/octet-stream 34.3524ms
+2023-09-24 19:56:35.552 +03:30 [INF] Sending file. Request path: '/_framework/System.Threading.Tasks.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Threading.Tasks.dll.gz'
+2023-09-24 19:56:35.552 +03:30 [INF] Sending file. Request path: '/_framework/System.Threading.Tasks.Extensions.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Threading.Tasks.Extensions.dll.gz'
+2023-09-24 19:56:35.552 +03:30 [INF] HTTP GET /_framework/System.Threading.Tasks.dll.gz responded 200 in 7.3176 ms
+2023-09-24 19:56:35.552 +03:30 [INF] HTTP GET /_framework/System.Threading.Tasks.Extensions.dll.gz responded 200 in 15.1479 ms
+2023-09-24 19:56:35.552 +03:30 [INF] Sending file. Request path: '/_framework/System.Threading.Tasks.Parallel.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Threading.Tasks.Parallel.dll.gz'
+2023-09-24 19:56:35.552 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Threading.Tasks.dll - - - 200 10059 application/octet-stream 7.6568ms
+2023-09-24 19:56:35.552 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Threading.Tasks.Extensions.dll - - - 200 9671 application/octet-stream 15.3660ms
+2023-09-24 19:56:35.552 +03:30 [INF] HTTP GET /_framework/System.Threading.Tasks.Parallel.dll.gz responded 200 in 15.2995 ms
+2023-09-24 19:56:35.552 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Threading.ThreadPool.dll - -
+2023-09-24 19:56:35.552 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Threading.Thread.dll - -
+2023-09-24 19:56:35.557 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Threading.Tasks.Parallel.dll - - - 200 27522 application/octet-stream 20.6145ms
+2023-09-24 19:56:35.558 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Threading.dll - -
+2023-09-24 19:56:35.558 +03:30 [INF] Sending file. Request path: '/_framework/System.Threading.Thread.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Threading.Thread.dll.gz'
+2023-09-24 19:56:35.558 +03:30 [INF] HTTP GET /_framework/System.Threading.Thread.dll.gz responded 200 in 6.2961 ms
+2023-09-24 19:56:35.562 +03:30 [INF] Sending file. Request path: '/_framework/System.Threading.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Threading.dll.gz'
+2023-09-24 19:56:35.562 +03:30 [INF] HTTP GET /_framework/System.Threading.dll.gz responded 200 in 4.5134 ms
+2023-09-24 19:56:35.562 +03:30 [INF] Sending file. Request path: '/_framework/System.Threading.ThreadPool.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Threading.ThreadPool.dll.gz'
+2023-09-24 19:56:35.562 +03:30 [INF] HTTP GET /_framework/System.Threading.ThreadPool.dll.gz responded 200 in 10.1635 ms
+2023-09-24 19:56:35.563 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Threading.Thread.dll - - - 200 9731 application/octet-stream 10.3255ms
+2023-09-24 19:56:35.563 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.ValueTuple.dll - -
+2023-09-24 19:56:35.563 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Threading.ThreadPool.dll - - - 200 9642 application/octet-stream 10.6328ms
+2023-09-24 19:56:35.563 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Threading.dll - - - 200 22329 application/octet-stream 5.3346ms
+2023-09-24 19:56:35.558 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Transactions.Local.dll - -
+2023-09-24 19:56:35.563 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Transactions.dll - -
+2023-09-24 19:56:35.564 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Web.HttpUtility.dll - -
+2023-09-24 19:56:35.567 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Threading.Timer.dll - -
+2023-09-24 19:56:35.570 +03:30 [INF] Sending file. Request path: '/_framework/System.Transactions.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Transactions.dll.gz'
+2023-09-24 19:56:35.570 +03:30 [INF] HTTP GET /_framework/System.Transactions.dll.gz responded 200 in 6.3033 ms
+2023-09-24 19:56:35.570 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Transactions.dll - - - 200 10043 application/octet-stream 6.6434ms
+2023-09-24 19:56:35.576 +03:30 [INF] Sending file. Request path: '/_framework/System.Threading.Timer.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Threading.Timer.dll.gz'
+2023-09-24 19:56:35.576 +03:30 [INF] Sending file. Request path: '/_framework/System.Transactions.Local.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Transactions.Local.dll.gz'
+2023-09-24 19:56:35.576 +03:30 [INF] HTTP GET /_framework/System.Threading.Timer.dll.gz responded 200 in 8.6981 ms
+2023-09-24 19:56:35.577 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Threading.Timer.dll - - - 200 9603 application/octet-stream 10.6163ms
+2023-09-24 19:56:35.576 +03:30 [INF] Sending file. Request path: '/_framework/System.Web.HttpUtility.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Web.HttpUtility.dll.gz'
+2023-09-24 19:56:35.577 +03:30 [INF] HTTP GET /_framework/System.Web.HttpUtility.dll.gz responded 200 in 12.3449 ms
+2023-09-24 19:56:35.577 +03:30 [INF] HTTP GET /_framework/System.Transactions.Local.dll.gz responded 200 in 13.4148 ms
+2023-09-24 19:56:35.577 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Web.HttpUtility.dll - - - 200 16205 application/octet-stream 12.6560ms
+2023-09-24 19:56:35.579 +03:30 [INF] Sending file. Request path: '/_framework/System.ValueTuple.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.ValueTuple.dll.gz'
+2023-09-24 19:56:35.579 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Transactions.Local.dll - - - 200 58966 application/octet-stream 21.1278ms
+2023-09-24 19:56:35.579 +03:30 [INF] HTTP GET /_framework/System.ValueTuple.dll.gz responded 200 in 15.9574 ms
+2023-09-24 19:56:35.579 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Web.dll - -
+2023-09-24 19:56:35.579 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Xml.Linq.dll - -
+2023-09-24 19:56:35.579 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.ValueTuple.dll - - - 200 9610 application/octet-stream 16.2293ms
+2023-09-24 19:56:35.583 +03:30 [INF] Sending file. Request path: '/_framework/System.Web.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Web.dll.gz'
+2023-09-24 19:56:35.584 +03:30 [INF] HTTP GET /_framework/System.Web.dll.gz responded 200 in 4.8677 ms
+2023-09-24 19:56:35.584 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Web.dll - - - 200 9638 application/octet-stream 5.2298ms
+2023-09-24 19:56:35.585 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Text.Encoding.CodePages.dll - - - 200 522075 application/octet-stream 76.2718ms
+2023-09-24 19:56:35.585 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Xml.ReaderWriter.dll - -
+2023-09-24 19:56:35.585 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Xml.Serialization.dll - -
+2023-09-24 19:56:35.592 +03:30 [INF] Sending file. Request path: '/_framework/System.Xml.ReaderWriter.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Xml.ReaderWriter.dll.gz'
+2023-09-24 19:56:35.593 +03:30 [INF] Sending file. Request path: '/_framework/System.Xml.Serialization.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Xml.Serialization.dll.gz'
+2023-09-24 19:56:35.593 +03:30 [INF] HTTP GET /_framework/System.Xml.Serialization.dll.gz responded 200 in 7.6957 ms
+2023-09-24 19:56:35.593 +03:30 [INF] HTTP GET /_framework/System.Xml.ReaderWriter.dll.gz responded 200 in 7.6349 ms
+2023-09-24 19:56:35.593 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Xml.Serialization.dll - - - 200 9912 application/octet-stream 7.9757ms
+2023-09-24 19:56:35.593 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Xml.ReaderWriter.dll - - - 200 11509 application/octet-stream 8.1508ms
+2023-09-24 19:56:35.593 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Xml.XDocument.dll - -
+2023-09-24 19:56:35.593 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Xml.XPath.XDocument.dll - -
+2023-09-24 19:56:35.580 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Windows.dll - -
+2023-09-24 19:56:35.600 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Xml.XPath.dll - -
+2023-09-24 19:56:35.601 +03:30 [INF] Sending file. Request path: '/_framework/System.Xml.XPath.XDocument.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Xml.XPath.XDocument.dll.gz'
+2023-09-24 19:56:35.601 +03:30 [INF] HTTP GET /_framework/System.Xml.XPath.XDocument.dll.gz responded 200 in 8.1307 ms
+2023-09-24 19:56:35.601 +03:30 [INF] Sending file. Request path: '/_framework/System.Xml.Linq.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Xml.Linq.dll.gz'
+2023-09-24 19:56:35.602 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Xml.XPath.XDocument.dll - - - 200 9999 application/octet-stream 8.7349ms
+2023-09-24 19:56:35.602 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Xml.XmlDocument.dll - -
+2023-09-24 19:56:35.602 +03:30 [INF] HTTP GET /_framework/System.Xml.Linq.dll.gz responded 200 in 22.9189 ms
+2023-09-24 19:56:35.602 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Xml.Linq.dll - - - 200 9887 application/octet-stream 23.3777ms
+2023-09-24 19:56:35.607 +03:30 [INF] Sending file. Request path: '/_framework/System.Xml.XPath.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Xml.XPath.dll.gz'
+2023-09-24 19:56:35.607 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Xml.XmlSerializer.dll - -
+2023-09-24 19:56:35.607 +03:30 [INF] HTTP GET /_framework/System.Xml.XPath.dll.gz responded 200 in 5.7114 ms
+2023-09-24 19:56:35.608 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Xml.XPath.dll - - - 200 9608 application/octet-stream 7.1889ms
+2023-09-24 19:56:35.611 +03:30 [INF] Sending file. Request path: '/_framework/System.Xml.XmlDocument.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Xml.XmlDocument.dll.gz'
+2023-09-24 19:56:35.611 +03:30 [INF] Sending file. Request path: '/_framework/System.Xml.XmlSerializer.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Xml.XmlSerializer.dll.gz'
+2023-09-24 19:56:35.611 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.dll - -
+2023-09-24 19:56:35.611 +03:30 [INF] HTTP GET /_framework/System.Xml.XmlSerializer.dll.gz responded 200 in 3.7574 ms
+2023-09-24 19:56:35.611 +03:30 [INF] HTTP GET /_framework/System.Xml.XmlDocument.dll.gz responded 200 in 9.0138 ms
+2023-09-24 19:56:35.611 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Xml.XmlSerializer.dll - - - 200 10279 application/octet-stream 4.1567ms
+2023-09-24 19:56:35.611 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Xml.XmlDocument.dll - - - 200 9845 application/octet-stream 9.3043ms
+2023-09-24 19:56:35.611 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Xml.dll - -
+2023-09-24 19:56:35.616 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/WindowsBase.dll - -
+2023-09-24 19:56:35.616 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/mscorlib.dll - -
+2023-09-24 19:56:35.625 +03:30 [INF] Sending file. Request path: '/_framework/System.Xml.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Xml.dll.gz'
+2023-09-24 19:56:35.626 +03:30 [INF] Sending file. Request path: '/_framework/mscorlib.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\mscorlib.dll.gz'
+2023-09-24 19:56:35.628 +03:30 [INF] HTTP GET /_framework/mscorlib.dll.gz responded 200 in 11.8263 ms
+2023-09-24 19:56:35.628 +03:30 [INF] Sending file. Request path: '/_framework/System.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.dll.gz'
+2023-09-24 19:56:35.628 +03:30 [INF] HTTP GET /_framework/System.dll.gz responded 200 in 17.0067 ms
+2023-09-24 19:56:35.628 +03:30 [INF] Sending file. Request path: '/_framework/WindowsBase.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\WindowsBase.dll.gz'
+2023-09-24 19:56:35.628 +03:30 [INF] HTTP GET /_framework/WindowsBase.dll.gz responded 200 in 12.3698 ms
+2023-09-24 19:56:35.628 +03:30 [INF] Sending file. Request path: '/_framework/System.Windows.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Windows.dll.gz'
+2023-09-24 19:56:35.628 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/WindowsBase.dll - - - 200 10167 application/octet-stream 13.6186ms
+2023-09-24 19:56:35.628 +03:30 [INF] HTTP GET /_framework/System.Windows.dll.gz responded 200 in 26.0364 ms
+2023-09-24 19:56:35.629 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.dll - - - 200 19635 application/octet-stream 17.7513ms
+2023-09-24 19:56:35.630 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/GameServer.Core.dll - -
+2023-09-24 19:56:35.630 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/GameServer.SharedKernel.dll - -
+2023-09-24 19:56:35.632 +03:30 [INF] HTTP GET /_framework/System.Xml.dll.gz responded 200 in 20.2164 ms
+2023-09-24 19:56:35.635 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/GameServer.Client.dll - -
+2023-09-24 19:56:35.635 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/mscorlib.dll - - - 200 23074 application/octet-stream 19.1496ms
+2023-09-24 19:56:35.635 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Windows.dll - - - 200 9814 application/octet-stream 55.5821ms
+2023-09-24 19:56:35.635 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Xml.dll - - - 200 12031 application/octet-stream 24.0388ms
+2023-09-24 19:56:35.635 +03:30 [INF] Sending file. Request path: '/_framework/GameServer.SharedKernel.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\GameServer.SharedKernel.dll.gz'
+2023-09-24 19:56:35.636 +03:30 [INF] HTTP GET /_framework/GameServer.SharedKernel.dll.gz responded 200 in 4.8401 ms
+2023-09-24 19:56:35.636 +03:30 [INF] Sending file. Request path: '/_framework/System.Xml.XDocument.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Xml.XDocument.dll.gz'
+2023-09-24 19:56:35.636 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/GameServer.SharedKernel.dll - - - 200 15229 application/octet-stream 5.3020ms
+2023-09-24 19:56:35.636 +03:30 [INF] HTTP GET /_framework/System.Xml.XDocument.dll.gz responded 200 in 42.5279 ms
+2023-09-24 19:56:35.636 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Xml.XDocument.dll - - - 200 9827 application/octet-stream 42.8551ms
+2023-09-24 19:56:35.639 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/netstandard.dll - -
+2023-09-24 19:56:35.641 +03:30 [INF] Sending file. Request path: '/_framework/GameServer.Client.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\GameServer.Client.dll.gz'
+2023-09-24 19:56:35.641 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/GameServer.Core.pdb - -
+2023-09-24 19:56:35.641 +03:30 [INF] HTTP GET /_framework/GameServer.Client.dll.gz responded 200 in 5.7918 ms
+2023-09-24 19:56:35.642 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/GameServer.SharedKernel.pdb - -
+2023-09-24 19:56:35.642 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/System.Private.CoreLib.dll - -
+2023-09-24 19:56:35.645 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/GameServer.Client.dll - - - 200 70275 application/octet-stream 9.4697ms
+2023-09-24 19:56:35.645 +03:30 [INF] Sending file. Request path: '/_framework/GameServer.Core.pdb.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\GameServer.Core.pdb.gz'
+2023-09-24 19:56:35.645 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/GameServer.Client.pdb - -
+2023-09-24 19:56:35.645 +03:30 [INF] HTTP GET /_framework/GameServer.Core.pdb.gz responded 200 in 4.3292 ms
+2023-09-24 19:56:35.646 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/GameServer.Core.pdb - - - 200 13239 application/octet-stream 5.1492ms
+2023-09-24 19:56:35.647 +03:30 [INF] Sending file. Request path: '/_framework/netstandard.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\netstandard.dll.gz'
+2023-09-24 19:56:35.647 +03:30 [INF] HTTP GET /_framework/netstandard.dll.gz responded 200 in 7.5709 ms
+2023-09-24 19:56:35.649 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/dotnet.wasm - -
+2023-09-24 19:56:35.649 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/netstandard.dll - - - 200 33449 application/octet-stream 10.0070ms
+2023-09-24 19:56:35.650 +03:30 [INF] Sending file. Request path: '/_framework/GameServer.Core.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\GameServer.Core.dll.gz'
+2023-09-24 19:56:35.650 +03:30 [INF] HTTP GET /_framework/GameServer.Core.dll.gz responded 200 in 19.2673 ms
+2023-09-24 19:56:35.656 +03:30 [INF] Sending file. Request path: '/_framework/GameServer.Client.pdb.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\GameServer.Client.pdb.gz'
+2023-09-24 19:56:35.657 +03:30 [INF] HTTP GET /_framework/GameServer.Client.pdb.gz responded 200 in 10.8074 ms
+2023-09-24 19:56:35.660 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/GameServer.Client.pdb - - - 200 83715 application/octet-stream 14.7713ms
+2023-09-24 19:56:35.660 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/GameServer.Core.dll - - - 200 15740 application/octet-stream 29.8884ms
+2023-09-24 19:56:35.660 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/dotnet.timezones.blat - -
+2023-09-24 19:56:35.658 +03:30 [INF] Sending file. Request path: '/_framework/GameServer.SharedKernel.pdb.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\GameServer.SharedKernel.pdb.gz'
+2023-09-24 19:56:35.662 +03:30 [INF] HTTP GET /_framework/GameServer.SharedKernel.pdb.gz responded 200 in 20.4526 ms
+2023-09-24 19:56:35.662 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/GameServer.SharedKernel.pdb - - - 200 12677 application/octet-stream 20.8567ms
+2023-09-24 19:56:35.666 +03:30 [INF] Sending file. Request path: '/_framework/dotnet.timezones.blat.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\dotnet.timezones.blat.gz'
+2023-09-24 19:56:35.666 +03:30 [INF] HTTP GET /_framework/dotnet.timezones.blat.gz responded 200 in 5.2065 ms
+2023-09-24 19:56:35.668 +03:30 [INF] Sending file. Request path: '/_framework/dotnet.wasm.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\dotnet.wasm.gz'
+2023-09-24 19:56:35.668 +03:30 [INF] HTTP GET /_framework/dotnet.wasm.gz responded 200 in 18.6012 ms
+2023-09-24 19:56:35.668 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/dotnet.timezones.blat - - - 200 74432 application/octet-stream 6.7335ms
+2023-09-24 19:56:35.672 +03:30 [INF] Sending file. Request path: '/_framework/System.Private.CoreLib.dll.gz'. Physical path: 'C:\Users\Mahdi\Documents\Projects\GameServer\src\GameServer.Client\bin\Debug\net7.0\wwwroot\_framework\System.Private.CoreLib.dll.gz'
+2023-09-24 19:56:35.672 +03:30 [INF] HTTP GET /_framework/System.Private.CoreLib.dll.gz responded 200 in 28.0386 ms
+2023-09-24 19:56:35.680 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/dotnet.wasm - - - 200 1031970 application/wasm 31.2645ms
+2023-09-24 19:56:35.692 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/System.Private.CoreLib.dll - - - 200 1287623 application/octet-stream 50.0383ms
+2023-09-24 19:56:36.445 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/blazor-hotreload.js - -
+2023-09-24 19:56:36.449 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/blazor-hotreload.js - - - 200 743 application/javascript;+charset=utf-8 2.8337ms
+2023-09-24 19:56:36.496 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/blazor-hotreload - -
+2023-09-24 19:56:36.501 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/blazor-hotreload - - - 204 - - 4.2650ms
+2023-09-24 19:56:36.609 +03:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/api/Authorize/UserInfo - -
+2023-09-24 19:56:36.614 +03:30 [INF] Executing endpoint 'GameServer.Web.Api.AuthorizeController.UserInfo (GameServer.Web)'
+2023-09-24 19:56:36.624 +03:30 [INF] Route matched with {action = "UserInfo", controller = "Authorize", page = "", area = ""}. Executing controller action with signature GameServer.SharedKernel.UserInfo UserInfo() on controller GameServer.Web.Api.AuthorizeController (GameServer.Web).
+2023-09-24 19:56:36.643 +03:30 [INF] Executing ObjectResult, writing value of type 'GameServer.SharedKernel.UserInfo'.
+2023-09-24 19:56:36.808 +03:30 [INF] Executed action GameServer.Web.Api.AuthorizeController.UserInfo (GameServer.Web) in 182.1872ms
+2023-09-24 19:56:36.809 +03:30 [INF] Executed endpoint 'GameServer.Web.Api.AuthorizeController.UserInfo (GameServer.Web)'
+2023-09-24 19:56:36.810 +03:30 [INF] HTTP GET /api/Authorize/UserInfo responded 200 in 200.5250 ms
+2023-09-24 19:56:36.810 +03:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/api/Authorize/UserInfo - - - 200 - application/json;+charset=utf-8 201.2461ms
