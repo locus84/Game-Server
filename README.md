@@ -11,3 +11,7 @@ Features:
 - Admin Panel for controlling any data with Blazor and MudBlazor
 - DDD and Clean architecture using https://github.com/ardalis/CleanArchitecture
 - Complete Unity Game and Client Sample using BestHttp Unity Asset
+
+Refrences:
+- https://github.com/MudBlazor/MudBlazor
+- https://github.com/ardalis/CleanArchitecture/tree/main
