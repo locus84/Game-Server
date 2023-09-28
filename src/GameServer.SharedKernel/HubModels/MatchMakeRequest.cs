@@ -1,4 +1,4 @@
-﻿using System.Linq.Expressions;
+using System.Linq.Expressions;
 using Microsoft.CodeAnalysis.CSharp.Scripting;
 
 namespace GameServer.SharedKernel.HubModels;
@@ -10,7 +10,7 @@ public sealed class MatchMakeRequest
   public Dictionary<string, string>? KeyValues { get; set; }
   public string? Username { get; set; }
   
-  public DateTime RequestTime { get; private set; } = DateTime.Now;
+  public DateTime RequestTime { get; private set; } = DateTime.UtcNow;
 
   public async Task<bool> Evaluate(MatchMakeRequest other)
   {
@@ -23,7 +23,8 @@ public sealed class MatchMakeRequest
 
     try
     {
-      var code = KeyValues.Keys.Aggregate(Condition, (rep, key) => rep.Replace(key, KeyValues[key]));
+      var code = $"{GenerateCondition(KeyValues, other.Condition!)} && {GenerateCondition(other.KeyValues!, Condition)}";
+      
       return await CSharpScript.EvaluateAsync<bool>(code);
     }
     catch (Exception e)
@@ -32,5 +33,10 @@ public sealed class MatchMakeRequest
 
       return false;
     }
+  }
+
+  private string GenerateCondition(Dictionary<string, string> keyValues, string condition)
+  {
+    return keyValues.Keys.Aggregate(condition, (rep, key) => rep.Replace(key, keyValues[key] is string ? $"\"{keyValues[key]}\"" : keyValues[key]));
   }
 }
